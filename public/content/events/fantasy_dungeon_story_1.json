@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_dungeon_story_1",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_dungeon"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "첫 번째 방의 환불",
+  "description": "초보 모험가가 함정 설명과 실제 위치가 다르다며 입장료 환불을 요구한다. 설명문을 쓴 것도 읽지 않은 것도 당신이다.",
+  "image": "images/entities/fantasy_dungeon.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "안내도를 고쳐 무료로 공개한다",
+      "resultText": "첫 방에서 길 잃는 사람이 줄었다. 살아 나간 이들이 다시 찾아왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_dungeon_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "함정을 기념품으로 바꾼다",
+      "resultText": "함정은 팔렸지만 다음 방의 예산이 부족해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 12
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「방 재배열」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "fantasy_dungeon_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

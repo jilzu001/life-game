@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_09",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "무료 수리의 조건",
+  "description": "어떤 고장도 고쳐 준다는 곳에서 수리 뒤에는 예전 모습을 잊으라고 요구한다. 흠집 중에는 남기고 싶은 것도 있다.",
+  "image": "images/events/universal_signal.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "필요한 부분만 고친다",
+      "resultText": "새것은 아니어도 자기 흔적이 있는 상태로 돌아왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "전부 바꾸고 떠난다",
+      "resultText": "한동안 가벼웠지만 익숙한 사용법부터 다시 익혀야 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

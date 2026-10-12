@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_10",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "우주 경계의 검문",
+  "description": "검문소는 생명과 화물을 분리하라고 한다. 자아를 가진 우주선과 기생체와 천체가 어느 줄에 설지 묻는다.",
+  "image": "images/events/space_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "의사를 표현하는 존재로 다시 구분한다",
+      "resultText": "분류표가 늘어나는 동안 줄은 짧아졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "조용히 화물 구역으로 통과한다",
+      "resultText": "쉽게 지나갔지만 이동 경로를 직접 정할 권리를 잠시 내줬다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -12
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

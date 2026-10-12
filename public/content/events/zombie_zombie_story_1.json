@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_zombie_story_1",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_zombie"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "생전의 출근 카드",
+  "description": "폐쇄된 회사의 단말기가 당신의 지문을 알아본다. 관리 프로그램은 지각 사유부터 묻는다.",
+  "image": "images/entities/zombie_zombie.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "퇴직 신청서를 남긴다",
+      "resultText": "처음으로 무리의 발걸음이 아닌 자기 일정이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_zombie_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "밀린 월급을 청구한다",
+      "resultText": "아무도 없던 사무실에서 근무 기록이 출력됐다. 기억을 찾을 단서였다.",
+      "effects": [
+        {
+          "op": "addItem",
+          "key": "zombie_identity"
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「냄새 구분」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "zombie_zombie_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

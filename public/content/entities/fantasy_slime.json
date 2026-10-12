@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_slime",
+  "worldId": "fantasy",
+  "name": "슬라임",
+  "description": "작은 몸으로 버려진 것들을 삼키며, 먹을 수 없는 약속까지 품게 된 점액 생명체.",
+  "entityType": "creature",
+  "image": "images/entities/fantasy_slime.svg",
+  "weight": 50,
+  "timeUnit": "분열기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "fantasy_slime_place_0",
+      "name": "버려진 약병",
+      "description": "버려진 약병에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_place_0",
+        "royal_property"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "fantasy_slime_place_1",
+      "name": "마을 하수로",
+      "description": "마을 하수로에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_place_1",
+        "ancient_origin"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "fantasy_slime_trait_0",
+      "name": "금속 소화",
+      "description": "금속 소화 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "fantasy_slime_trait_1",
+      "name": "형태 기억",
+      "description": "형태 기억 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "fantasy_slime_flaw_0",
+      "name": "건조에 취약",
+      "description": "건조에 취약 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "fantasy_slime_flaw_1",
+      "name": "빛나는 점액",
+      "description": "빛나는 점액 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "fantasy_slime_fate_0",
+      "name": "용의 잔향",
+      "description": "용의 잔향. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_fate_0",
+        "fantasy_fate_0",
+        "fate_crown_witness"
+      ],
+      "effects": [],
+      "conditions": {
+        "type": "flag",
+        "key": "royal_property",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "fantasy_slime_fate_1",
+      "name": "수로의 수호자",
+      "description": "수로의 수호자. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_slime_fate_1",
+        "fantasy_fate_1",
+        "fate_sealed_gate_key"
+      ],
+      "effects": [],
+      "conditions": {
+        "type": "flag",
+        "key": "ancient_origin",
+        "operator": "equals",
+        "value": true
+      }
+    }
+  ],
+  "initialStats": {
+    "survival": 50,
+    "influence": 20,
+    "intelligence": 35,
+    "freedom": 60,
+    "chaos": 45
+  },
+  "tags": [
+    "creature",
+    "slime"
+  ]
+}

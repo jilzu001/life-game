@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_06",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "도시 업데이트 중",
+  "description": "밤새 도로 표지와 건물 주소가 바뀐다. 새 지도는 빠르지만 이동이 느린 존재들을 경로에서 지워 버렸다.",
+  "image": "images/events/cyberpunk_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "오래된 표지를 함께 남긴다",
+      "resultText": "업데이트를 늦추는 대신 더 많은 존재가 길을 찾았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "빠른 경로를 독점한다",
+      "resultText": "혼자 먼저 도착했지만 길을 묻는 목소리를 지나쳤다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

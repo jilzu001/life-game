@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_fridge_story_3",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_fridge"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "혼자 사는 집에서 공유 주방으로",
+  "description": "새 주인은 작은 냉장고면 충분하다며 당신을 내놓았다. 마을 공유 주방이 오래된 큰 선반을 필요로 한다.",
+  "image": "images/entities/reality_fridge.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "공유 주방에서 여러 식탁을 잇는다",
+      "resultText": "한 집의 기한을 관리하던 존재가 이웃들의 한 끼를 잇게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_fridge_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "부품을 수리해 오래된 집에 남는다",
+      "resultText": "익숙한 손길과 소리를 더 오래 지킬 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "유통 기한보다 먼저에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "reality_fridge_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

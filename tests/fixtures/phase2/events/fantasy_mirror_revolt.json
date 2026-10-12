@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_mirror_revolt",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "거울 속 당신의 파업",
+  "description": "처음 이름을 물었던 거울 속 모습이 파업했다. 본체만 모험하고 반사상은 임금을 못 받는다는 이유다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  },
+  "choices": [
+    {
+      "id": "share",
+      "text": "반사상과 명성을 나눈다",
+      "resultText": "거울 속 당신이 다시 웃었다. 이번에는 조금 늦게 웃는다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "shatter",
+      "text": "거울을 깨고 반사상을 풀어 준다",
+      "resultText": "수많은 당신이 흩어졌다. 자유의 대가로 본체에도 금이 갔다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "break_system",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -25
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 20
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 4
+}

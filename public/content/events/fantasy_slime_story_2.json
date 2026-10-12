@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_slime_story_2",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_slime"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "분열한 내가 밀린 월세를 냈다",
+  "description": "잠든 사이 떨어져 나온 작은 몸이 취직까지 했다. 임대인은 두 존재가 한 방에 산다며 월세를 두 배로 청구한다.",
+  "image": "images/entities/fantasy_slime.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "각자의 이름으로 계약한다",
+      "resultText": "작은 몸은 독립했고 서로 필요한 것을 나누기로 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_slime_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "다시 합쳐 한 명임을 증명한다",
+      "resultText": "월세는 줄었지만 다른 하루의 기억이 섞여 한동안 어지러웠다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「건조에 취약」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "fantasy_slime_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

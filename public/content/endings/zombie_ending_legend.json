@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_ending_legend",
+  "worldIds": [
+    "zombie"
+  ],
+  "title": "새벽 방송의 이름",
+  "description": "어두운 도시에서 당신의 신호가 길을 안내했다. 함께 버티겠다는 약속을 지킨 이야기가 여러 대피소를 잇는다.",
+  "image": "images/endings/zombie_legend.svg",
+  "priority": 60,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "zombie_promise",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 65
+      }
+    ]
+  }
+}

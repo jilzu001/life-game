@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "space_ending_reversal",
+  "worldIds": [
+    "space"
+  ],
+  "title": "지도 바깥의 집",
+  "description": "처음의 분류로는 부를 수 없는 삶이 시작됐다. 이동하는 집, 돌 위의 정원, 혼자 떠나는 공생체가 각자의 고향을 만들었다.",
+  "image": "images/endings/space_reversal.svg",
+  "priority": 70,
+  "isDefault": false,
+  "conditions": {
+    "type": "flag",
+    "key": "space_reversal",
+    "operator": "equals",
+    "value": true
+  }
+}

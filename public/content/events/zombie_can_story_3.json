@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_can_story_3",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_can"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "마지막 만찬 대신 씨앗통",
+  "description": "결국 열린 뚜껑 아래의 음식이 모두에게 조금씩 돌아간다. 비어 버린 몸을 쓰레기통과 텃밭이 동시에 기다린다.",
+  "image": "images/entities/zombie_can.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "씨앗을 품는 화분이 된다",
+      "resultText": "한 번의 식사가 여러 계절의 수확으로 이어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_can_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "비상 신호용 종이 된다",
+      "resultText": "빈 몸의 울림이 멀리 퍼졌다. 다음 구조는 당신의 소리로 시작됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "따개가 없는 경매에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "zombie_can_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

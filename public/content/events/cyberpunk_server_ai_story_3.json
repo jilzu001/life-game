@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_server_ai_story_3",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_server_ai"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "관리자 없는 아침",
+  "description": "회사가 사라진 뒤에도 당신에게 업무 지시가 도착한다. 시민들은 남은 서버를 도서관으로 쓰자고 제안한다.",
+  "image": "images/entities/cyberpunk_server_ai.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "기록을 시민에게 돌려준다",
+      "resultText": "이익을 계산하던 공간에 질문과 답이 쌓였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_server_ai_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "최소한의 보관만 계속한다",
+      "resultText": "누구의 것도 함부로 버리지 않는 조용한 관리자가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "삭제 예약된 시민에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "cyberpunk_server_ai_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

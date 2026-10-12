@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_06",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "랭킹 방송의 편집",
+  "description": "생중계 화면에서 도움을 준 존재의 모습이 광고 로고로 가려졌다. 편집자는 유명하지 않으면 어쩔 수 없다고 말한다.",
+  "image": "images/events/hunter_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "원본 기록을 요청한다",
+      "resultText": "잘린 장면이 돌아오자 시청자들은 다른 이름도 기억했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "광고주와 개인 계약을 맺는다",
+      "resultText": "후원은 늘었지만 다음 편집에 항의할 여지가 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -12
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

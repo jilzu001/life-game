@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_sky_auction",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "하늘을 경매하는 중개인",
+  "description": "익숙한 중개인이 이번에는 하늘을 판다. 낙찰받으면 비가 내릴 때마다 당신에게 항의가 온다고 한다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  },
+  "choices": [
+    {
+      "id": "buy",
+      "text": "하늘의 한 조각을 인수한다",
+      "resultText": "하늘 조각은 손바닥보다 작았지만 소문은 온 나라를 덮었다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "broker_deal",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 20
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "return",
+      "text": "하늘을 원래 자리에 돌려놓는다",
+      "resultText": "중개인의 사다리가 무너졌다. 떨어지는 하늘을 붙들다 크게 다쳤다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -25
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "break_system",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 5
+}

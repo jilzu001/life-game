@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "space_ship_story_3",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_ship"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "집이 된 화물칸",
+  "description": "승객들이 정거장에 내리지 않고 당신 안에 작은 정원을 만들었다. 탐사 임무와 정착 생활이 같은 복도에서 만난다.",
+  "image": "images/entities/space_ship.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "이동하는 마을로 등록한다",
+      "resultText": "항해 일정은 회의에서 정해졌다. 장비 목록 밖에 당신의 이름이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_ship_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "다음 정거장에 정원을 내려놓는다",
+      "resultText": "탐사를 계속하며 돌아올 곳 하나를 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "승객 명단의 빈자리에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "space_ship_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

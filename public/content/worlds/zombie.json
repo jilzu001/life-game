@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie",
+  "name": "좀비 아포칼립스",
+  "description": "도시가 무너진 뒤, 인간과 감염체와 남은 물건들이 생존의 규칙을 다시 정한다.",
+  "image": "images/worlds/zombie.svg",
+  "weight": 100,
+  "entityIds": [
+    "zombie_survivor",
+    "zombie_zombie",
+    "zombie_virus",
+    "zombie_shelter_ai",
+    "zombie_can"
+  ]
+}

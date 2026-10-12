@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_android_story_1",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_android"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "흠집의 보증 범위",
+  "description": "공장 검수원은 스스로 고른 행동 때문에 생긴 흠집을 보증에서 제외한다. 매끈한 표면보다 흠집에 이야기가 많다.",
+  "image": "images/entities/cyberpunk_android.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "흠집을 생활 기록으로 남긴다",
+      "resultText": "불량 보고서가 경험 기록으로 바뀌기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_android_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "외장을 새것으로 바꾼다",
+      "resultText": "다음 고장은 덜 두려워졌지만 낡은 표면의 흔적과 작별했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「섬세한 감각」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "cyberpunk_android_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

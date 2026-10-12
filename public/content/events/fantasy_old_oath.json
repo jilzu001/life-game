@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_old_oath",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "돌아온 약속",
+  "description": "예전에 당신에게 손을 내밀었던 사람이 돌아왔다. 이제는 그쪽이 도움을 청한다. 영수증도 계약서도 꺼내지 않는다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "fate_seen",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "help",
+      "text": "할 수 있는 만큼 돕는다",
+      "resultText": "약속을 새로 썼다. 도움을 받았던 기록이 이번에는 당신의 이름을 떠받쳤다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "oath",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "depart",
+      "text": "새 길로 떠난다",
+      "resultText": "끝내 갚지 못한 마음도 여행의 짐이 되었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addTag",
+          "key": "wanderer"
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

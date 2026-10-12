@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_hacker_story_1",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_hacker"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "지워진 출석부",
+  "description": "옛 학교의 출석부에서 당신과 친구들의 이름만 빠졌다. 복구 비용을 받는 업체는 삭제한 업체와 주소가 같다.",
+  "image": "images/entities/cyberpunk_hacker.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "증거를 친구들과 나눈다",
+      "resultText": "사라진 하루를 함께 증언할 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_hacker_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "자기 이름부터 복구한다",
+      "resultText": "신분은 되찾았지만 빈칸의 다른 이름들이 마음에 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「패턴 독해」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "cyberpunk_hacker_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

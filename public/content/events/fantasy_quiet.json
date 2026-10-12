@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_quiet",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "아무도 재촉하지 않는 시간",
+  "description": "다음 소식이 오기까지 잠시 고요가 흐른다. 당신은 지나온 선택을 돌아보고 남은 힘을 가다듬는다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 1,
+  "choices": [
+    {
+      "id": "rest",
+      "text": "남은 힘을 돌본다",
+      "resultText": "급히 답을 찾지 않고 다음 순간을 맞을 여유를 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 3
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "reflect",
+      "text": "지나온 일을 정리한다",
+      "resultText": "지나간 선택을 기록하며 자신의 뜻을 더 분명히 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 3
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "isFallback": true
+}

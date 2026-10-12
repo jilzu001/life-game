@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_mana_stone_story_2",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_mana_stone"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "과충전 할인 행사",
+  "description": "더 많은 마나를 넣으면 가격이 오른다며 압력이 커진다. 작은 균열이 이미 표면을 지나고 있다.",
+  "image": "images/entities/hunter_mana_stone.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "안전 용량을 표시한다",
+      "resultText": "덜 눈부셔도 오래 쓸 수 있는 존재라는 신뢰가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_mana_stone_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "한 번만 더 채운다",
+      "resultText": "밝은 빛이 사람들을 불렀지만 균열은 안쪽까지 뻗었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -22
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「금이 간 표면」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "hunter_mana_stone_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "worldIds": [
+    "fantasy"
+  ],
+  "image": "images/worlds/fantasy.svg",
+  "id": "fantasy_reborn",
+  "title": "칼날이 걷는 아침",
+  "description": "두 발로 떠나는 모험가는 여전히 칼날의 기억을 간직했다. 새 몸은 과거를 지우지 않고, 그 과거에 다른 다음 장을 주었다.",
+  "priority": 70,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "entity",
+        "operator": "equals",
+        "value": "fantasy_adventurer"
+      },
+      {
+        "type": "flag",
+        "key": "reborn_human",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "choice",
+        "eventId": "fantasy_new_body",
+        "choiceId": "human",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_10",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "백업의 소유권 재판",
+  "description": "복제한 기억의 원본과 사본이 모두 자신이 주인이라고 주장한다. 판사는 둘 중 하나를 지우면 쉽다고 말한다.",
+  "image": "images/events/cyberpunk_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "서로 다른 이후의 삶을 인정한다",
+      "resultText": "복제 뒤에 생긴 경험이 별개의 권리가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "원본 증명서를 산다",
+      "resultText": "한쪽의 자격은 지켰지만 가격표로 정체성을 가르는 전례가 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

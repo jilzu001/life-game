@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_virus_story_3",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_virus"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "소멸 표의 빈칸",
+  "description": "당신을 없애기 위한 표에서 예상과 다른 반응이 발견됐다. 지속할지 멈출지 처음으로 자신의 주기를 돌아본다.",
+  "image": "images/entities/zombie_virus.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "공존 신호만 남기고 증식을 멈춘다",
+      "resultText": "개체는 작아졌지만 해를 줄이는 관계가 기억됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_virus_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "마지막 자원을 모두 쓴다",
+      "resultText": "빠른 변화 뒤에 회복할 여지가 거의 남지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -30
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "차가운 숙주의 노래에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "zombie_virus_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_ending_reversal",
+  "worldIds": [
+    "zombie"
+  ],
+  "title": "생존의 뜻을 바꾼 존재",
+  "description": "처음의 역할로는 상상하지 못할 다음 자리를 찾았다. 누군가는 회복했고 누군가는 비어 있는 몸으로 새로운 계절을 품었다.",
+  "image": "images/endings/zombie_reversal.svg",
+  "priority": 70,
+  "isDefault": false,
+  "conditions": {
+    "type": "flag",
+    "key": "zombie_reversal",
+    "operator": "equals",
+    "value": true
+  }
+}

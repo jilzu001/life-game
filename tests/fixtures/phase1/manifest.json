@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.1.0-phase1",
+  "worlds": ["worlds/fantasy.json"],
+  "entities": ["entities/fantasy_sword.json"],
+  "events": [],
+  "endings": []
+}

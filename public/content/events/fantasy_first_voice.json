@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_first_voice",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "당신에게 이름을 묻는 거울",
+  "description": "먼지 쌓인 거울이 먼저 말을 건넨다. 이름을 대면 신분증을 발급해 준다는데, 유효 기간은 다음 왕이 바뀔 때까지다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": false
+  },
+  "choices": [
+    {
+      "id": "trust",
+      "text": "거울에 이름을 맡긴다",
+      "resultText": "이름을 들은 순찰 기사가 당신을 동행으로 받아들였다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "life_started",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "knight_friend",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": [],
+      "nextEventId": "fantasy_knight"
+    },
+    {
+      "id": "threaten",
+      "text": "거울도 내 소유라고 선언한다",
+      "resultText": "거울은 당신의 소유권을 경매에 올리는 것으로 대답했다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "life_started",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "arrogant",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 20
+        }
+      ],
+      "branches": [],
+      "nextEventId": "fantasy_auction"
+    },
+    {
+      "id": "speak",
+      "text": "거울과 신분증 약관을 협상한다",
+      "resultText": "말이 통하는 존재를 처음 만난 거울이 기사에게 추천서를 써 주었다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "life_started",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "knight_friend",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        }
+      ],
+      "branches": [],
+      "conditions": {
+        "type": "flag",
+        "key": "can_speak",
+        "operator": "equals",
+        "value": true
+      },
+      "nextEventId": "fantasy_knight"
+    }
+  ],
+  "branches": []
+}

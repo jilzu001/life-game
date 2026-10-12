@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_human",
+  "worldId": "reality",
+  "name": "인간",
+  "description": "특별한 예언 없이 태어났지만 평범한 날들의 연결이 다른 사람의 삶을 바꾼다.",
+  "entityType": "human",
+  "image": "images/entities/reality_human.svg",
+  "weight": 50,
+  "timeUnit": "계절",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "reality_human_place_0",
+      "name": "오래된 주택가",
+      "description": "오래된 주택가에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "reality_human_place_1",
+      "name": "신도시 원룸",
+      "description": "신도시 원룸에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "reality_human_trait_0",
+      "name": "관찰하는 눈",
+      "description": "관찰하는 눈 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "reality_human_trait_1",
+      "name": "사람 잇기",
+      "description": "사람 잇기 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "reality_human_flaw_0",
+      "name": "불규칙한 잠",
+      "description": "불규칙한 잠 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "reality_human_flaw_1",
+      "name": "거절의 어려움",
+      "description": "거절의 어려움 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "reality_human_fate_0",
+      "name": "돌아오는 편지",
+      "description": "돌아오는 편지. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_fate_0",
+        "reality_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "reality_human_fate_1",
+      "name": "작은 모임",
+      "description": "작은 모임. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "reality_human_fate_1",
+        "reality_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 60,
+    "influence": 35,
+    "intelligence": 50,
+    "freedom": 50,
+    "chaos": 20
+  },
+  "tags": [
+    "human"
+  ]
+}

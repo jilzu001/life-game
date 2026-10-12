@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_admin_story_2",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_admin"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "관리자의 경험치",
+  "description": "다른 존재의 성장을 계산하다 당신의 기록만 비어 있음을 발견한다. 시스템은 관리자는 성장할 필요가 없다고 답한다.",
+  "image": "images/entities/hunter_admin.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "실패와 배운 것을 따로 기록한다",
+      "resultText": "공식 레벨 없이도 바뀌어 온 흔적이 쌓였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_admin_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "효율 보고서로 대신한다",
+      "resultText": "성과는 증명했지만 성장이라고 부를 문장은 남지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「읽기 전용 계정」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "hunter_admin_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

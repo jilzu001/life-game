@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_12",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "동의 버튼 없는 계약",
+  "description": "도시 운영권 계약에 동의 버튼만 있고 거절 버튼은 없다. 최종 승인자 목록에 당신의 이름이 올라 있다.",
+  "image": "images/events/cyberpunk_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "거절과 수정 권한을 추가한다",
+      "resultText": "동의의 의미를 다시 쓰는 작은 수정이 도시의 관행을 바꿨다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "모든 권한을 혼자 인수한다",
+      "resultText": "가장 넓은 권한과 가장 큰 책임이 동시에 내려앉았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -25
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

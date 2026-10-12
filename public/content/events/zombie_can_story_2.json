@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_can_story_2",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_can"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "찌그러짐 감정서",
+  "description": "감정사는 흠집이 내용물을 보호한 흔적이라고 말한다. 상인은 결함이라며 당신을 할인하려 한다.",
+  "image": "images/entities/zombie_can.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "흠집의 사연을 남긴다",
+      "resultText": "생존의 증거를 본 사람들이 함부로 굴리지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_can_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "새 상표로 덮는다",
+      "resultText": "겉은 새로워졌지만 보관 주의사항도 가려졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 12
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「찌그러진 뚜껑」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "zombie_can_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

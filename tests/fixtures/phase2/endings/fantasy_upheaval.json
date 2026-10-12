@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "worldIds": [
+    "fantasy"
+  ],
+  "image": "images/worlds/fantasy.svg",
+  "id": "fantasy_upheaval",
+  "title": "누구의 소유도 아닌 세계",
+  "description": "당신이 건드린 규칙 하나가 세계의 질서를 바꿨다. 이제 검도, 거울도, 사람도 자신의 뜻을 묻는 계약서를 받는다.",
+  "priority": 80,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "stat",
+        "key": "chaos",
+        "operator": "gte",
+        "value": 70
+      },
+      {
+        "type": "flag",
+        "key": "break_system",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

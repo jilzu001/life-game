@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "space_alien_story_2",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_alien"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "숨 쉬는 방의 설계",
+  "description": "새 정거장은 모두에게 같은 공기를 공급하려 한다. 당신에게 편한 환경은 다른 승객에게 낯설다.",
+  "image": "images/entities/space_alien.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "서로 연결된 다른 방을 설계한다",
+      "resultText": "같은 공기를 마시지 않아도 함께 머물 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "space_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_alien_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "자신의 작은 환경만 보존한다",
+      "resultText": "혼자 쉴 자리는 지켰지만 생활 반경이 좁아졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「중력 멀미」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "space_alien_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

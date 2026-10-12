@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_05",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "기억 속의 체납 고지",
+  "description": "존재하지 않은 날의 서비스 요금이 청구됐다. 항의하자 상담 창구는 기억을 제출하면 기억 보관료도 붙는다고 한다.",
+  "image": "images/events/cyberpunk_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "장부의 모순을 공개한다",
+      "resultText": "같은 날 요금을 낸 이들이 모였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "긴 계약으로 채무를 돌린다",
+      "resultText": "오늘은 넘어갔지만 내일의 선택지가 좁아졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

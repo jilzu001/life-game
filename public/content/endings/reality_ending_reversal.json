@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_ending_reversal",
+  "worldIds": [
+    "reality"
+  ],
+  "title": "뜻밖의 두 번째 자리",
+  "description": "쓸모없다던 순간에 다른 쓰임과 관계를 찾았다. 처음 있던 곳과 달라도 그곳에서 보낸 시간은 새 삶의 바탕이 됐다.",
+  "image": "images/endings/reality_reversal.svg",
+  "priority": 70,
+  "isDefault": false,
+  "conditions": {
+    "type": "flag",
+    "key": "reality_reversal",
+    "operator": "equals",
+    "value": true
+  }
+}

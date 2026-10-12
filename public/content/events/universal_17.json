@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_17",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "도착 후에 읽는 설명서",
+  "description": "목적지에 도착해서야 여기까지 오는 법이 적힌 설명서를 받았다. 당신이 온 길과 다른 부분이 많다.",
+  "image": "images/events/universal_signal.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "실제로 지난 길을 덧붙인다",
+      "resultText": "다음 존재가 사용할 수 있는 여러 방법이 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "설명서를 접어 기념으로 둔다",
+      "resultText": "옳은 길 하나를 증명하지 않아도 도착했다는 사실은 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_cat_story_2",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_cat"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "닫힌 문 너머의 울음",
+  "description": "익숙한 집의 문이 닫힌 채 오랫동안 아무 소리도 들리지 않는다. 발소리가 지나갈 때 크게 울어 볼 수 있다.",
+  "image": "images/entities/reality_cat.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "사람이 올 때마다 알린다",
+      "resultText": "멈춰 선 이웃이 안부를 확인했다. 골목은 당신의 울음을 새롭게 들었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_cat_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "문 앞에 머물며 기다린다",
+      "resultText": "늦게 돌아온 사람이 익숙한 모습을 보고 안도했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「물 공포」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "reality_cat_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

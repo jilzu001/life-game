@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_04",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "옥상의 빗물 세금",
+  "description": "정수 장치를 가진 관리자가 하늘에서 내리는 물에도 통행료를 붙였다. 빈 용기들이 빗속에서 줄을 선다.",
+  "image": "images/events/zombie_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "공동 관리 시간을 제안한다",
+      "resultText": "차례로 필터를 돌보자 한 사람의 열쇠가 필요 없어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "오염된 물을 들고 우회한다",
+      "resultText": "급한 갈증은 해결했지만 회복할 시간이 더 필요해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -12
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

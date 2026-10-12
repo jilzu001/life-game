@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="푸른 빛이 도는 마검">
+  <rect width="240" height="160" rx="16" fill="#141b2c"/>
+  <circle cx="120" cy="74" r="51" fill="#202d43"/>
+  <path d="M120 13 133 37 125 108H115L107 37Z" fill="#c1d9e9"/>
+  <path d="M120 23V105" stroke="#5ab7e2" stroke-width="3"/>
+  <path d="M93 109 120 103 147 109" stroke="#d8b972" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M120 110V136" stroke="#947c56" stroke-width="8"/>
+  <circle cx="120" cy="141" r="7" fill="#d8b972"/>
+</svg>

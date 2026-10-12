@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_rookie_story_2",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_rookie"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "검보다 비싼 할부금",
+  "description": "장비 대금이 보상보다 많다. 상인은 더 큰 던전에 가면 갚을 수 있다며 새 검을 권한다.",
+  "image": "images/entities/hunter_rookie.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "장비를 공유하는 모임을 만든다",
+      "resultText": "빚 대신 사용 일정을 나누는 동료가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_rookie_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "더 큰 계약을 받는다",
+      "resultText": "강한 검을 얻었지만 돌아와야 할 이유가 빚으로 늘었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -20
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「낮은 마나」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "hunter_rookie_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

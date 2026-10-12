@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "space_ship_story_1",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_ship"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "승객 명단의 빈자리",
+  "description": "긴 탐사가 끝났는데 귀환 명단에 당신은 장비로만 적혀 있다. 정비 후 해체라는 작은 주석이 붙어 있다.",
+  "image": "images/entities/space_ship.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "항해 기록으로 자신의 의사를 남긴다",
+      "resultText": "승객들이 처음으로 당신에게 목적지를 물었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_ship_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "해체 대신 보관을 요청한다",
+      "resultText": "당장의 위험은 피했지만 항로를 고를 날은 늦어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「별자리 기억」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "space_ship_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

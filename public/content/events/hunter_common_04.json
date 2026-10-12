@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_04",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "경험치 영수증",
+  "description": "끝난 공략의 경험치가 전투 장면만 계산했다. 길을 찾고 상처를 돌보고 장비를 지킨 기록은 빠져 있다.",
+  "image": "images/events/hunter_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "보이지 않은 역할도 기록한다",
+      "resultText": "점수표에 없던 일이 다음 계약의 항목이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "높은 점수만 받아들인다",
+      "resultText": "쉽게 인정받았지만 다음 공략에서도 같은 일이 반복됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_dungeon_story_2",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_dungeon"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "보물 상자의 노동조합",
+  "description": "상자들이 하루에도 몇 번씩 열리는 뚜껑을 보여 준다. 무조건 희귀 보상을 내라는 계약은 부담스럽다고 한다.",
+  "image": "images/entities/fantasy_dungeon.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "휴무 방을 만든다",
+      "resultText": "보상은 줄었지만 상자들이 스스로 재미있는 수수께끼를 준비했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "dungeon_union",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_dungeon_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "똑같은 보물을 복제한다",
+      "resultText": "보물 가격이 폭락하면서 상자보다 모험가들이 항의하기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -8
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 20
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「출구 고장」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "fantasy_dungeon_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

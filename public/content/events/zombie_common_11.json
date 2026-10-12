@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_11",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "기억 보관소 정전",
+  "description": "사라진 이들의 음성 기록이 든 보관소가 꺼져 간다. 전원을 돌리면 오늘의 조명이 줄어든다.",
+  "image": "images/events/zombie_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "짧은 기록부터 여러 곳에 나눈다",
+      "resultText": "완벽한 원본 대신 사람들이 나누어 기억하는 도시가 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "현재의 조명을 지킨다",
+      "resultText": "오늘 밤의 사고는 막았다. 남지 못한 목소리는 서로 입으로 전했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

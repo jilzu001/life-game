@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_ending_survivor",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "title": "로그아웃 후의 아침",
+  "description": "도시를 지배하지는 못했지만 자신에게 돌아갈 시간을 남겼다. 다음 접속 여부는 직접 결정할 수 있었다.",
+  "image": "images/endings/cyberpunk_survivor.svg",
+  "priority": 0,
+  "isDefault": true
+}

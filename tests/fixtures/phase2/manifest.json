@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "0.2.0-phase2",
+  "worlds": ["worlds/fantasy.json"],
+  "entities": ["entities/fantasy_sword.json", "entities/fantasy_adventurer.json"],
+  "events": [
+    "events/fantasy_first_voice.json", "events/fantasy_knight.json", "events/fantasy_auction.json",
+    "events/fantasy_court.json", "events/fantasy_ruins.json", "events/fantasy_market.json", "events/fantasy_workshop.json",
+    "events/fantasy_owner_lost.json", "events/fantasy_bridge.json", "events/fantasy_curse.json", "events/fantasy_shelter.json",
+    "events/fantasy_fate.json", "events/fantasy_new_body.json", "events/fantasy_old_oath.json",
+    "events/fantasy_council.json", "events/fantasy_dragon_tax.json", "events/fantasy_mirror_revolt.json",
+    "events/fantasy_last_name.json", "events/fantasy_sky_auction.json", "events/fantasy_quiet.json"
+  ],
+  "endings": ["endings/fantasy_survivor.json", "endings/fantasy_legend.json", "endings/fantasy_ruin.json", "endings/fantasy_reborn.json", "endings/fantasy_upheaval.json"]
+}

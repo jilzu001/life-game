@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_boss_story_2",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_boss"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "부하의 연차 신청",
+  "description": "부하들이 같은 날 휴가를 냈다. 방어선은 비지만 그날은 던전 밖의 축제다.",
+  "image": "images/entities/hunter_boss.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "전투 일정을 다시 잡는다",
+      "resultText": "휴가를 다녀온 부하들이 스스로 근무표를 만들었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_boss_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "혼자 모든 방을 지킨다",
+      "resultText": "보스다운 모습을 보였지만 여러 방의 상처를 떠안았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -20
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「고정된 동선」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "hunter_boss_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

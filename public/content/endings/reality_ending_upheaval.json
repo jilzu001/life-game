@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_ending_upheaval",
+  "worldIds": [
+    "reality"
+  ],
+  "title": "골목에서 바뀐 규칙",
+  "description": "사소하다며 미뤄 둔 문제가 공동의 약속이 됐다. 누가 말할 수 있는지, 무엇을 돌봐야 하는지 동네의 기준이 넓어졌다.",
+  "image": "images/endings/reality_upheaval.svg",
+  "priority": 80,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "reality_reform",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "stat",
+        "key": "freedom",
+        "operator": "gte",
+        "value": 60
+      },
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 45
+      }
+    ]
+  }
+}

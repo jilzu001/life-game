@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_ending_legend",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "title": "네온 아래의 신뢰",
+  "description": "약속을 지킨 기록이 광고보다 멀리 퍼졌다. 사람들이 당신을 찾은 이유는 성능이 아니라 돌려줄 것을 돌려줬기 때문이다.",
+  "image": "images/endings/cyberpunk_legend.svg",
+  "priority": 60,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "cyberpunk_promise",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 65
+      }
+    ]
+  }
+}

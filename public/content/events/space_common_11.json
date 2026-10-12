@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_11",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "빈 행성의 관리비",
+  "description": "아무도 소유하지 않은 행성에 관리비 고지서가 도착한다. 청구한 문명은 이미 사라졌지만 자동 수납기는 살아 있다.",
+  "image": "images/events/space_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "청구 기록을 역사관으로 바꾼다",
+      "resultText": "빚 대신 오래전 문명이 남긴 실패를 배울 곳이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "자원을 내고 소유권을 받는다",
+      "resultText": "종이 한 장으로 넓은 땅을 얻었지만 지킬 책임도 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -12
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

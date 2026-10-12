@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_14",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "후회 교환 모임",
+  "description": "서로 후회를 교환하면 덜 무거워진다며 모임이 열린다. 듣다 보니 어떤 후회는 바꿀 수 있는 일이다.",
+  "image": "images/events/universal_council.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "지금 고칠 수 있는 일을 함께 고른다",
+      "resultText": "과거를 없애지 않고 다음 행동을 바꿀 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "shared_regret",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "말없이 들어 준다",
+      "resultText": "답이 없어도 끝까지 듣는 자리가 위로가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

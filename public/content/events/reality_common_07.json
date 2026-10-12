@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_07",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "오래된 사진 속의 자리",
+  "description": "우연히 발견한 사진 속에 당신이 시작한 장소가 있다. 사진 뒷면의 짧은 메모가 오래 이어진 관계를 알려 준다.",
+  "image": "images/events/reality_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "메모를 기억하는 이웃을 찾는다",
+      "resultText": "특별한 예언 대신 이어져 온 마음이 앞으로의 방향을 바꿨다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "사진을 누구나 볼 수 있게 남긴다",
+      "resultText": "모르는 사이 같은 자리를 기억하던 사람들이 모였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "태어날 때부터 이어진 신호에 응답한다",
+      "resultText": "우연인 줄 알았던 흔적이 숨겨진 운명과 이어졌다. 강요된 결말 대신 스스로 맡을 몫을 정했다.",
+      "conditions": {
+        "type": "flag",
+        "key": "reality_fate_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

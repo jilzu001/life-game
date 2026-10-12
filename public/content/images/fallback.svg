@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="미지의 운명">
+  <rect width="240" height="160" rx="16" fill="#141b2c"/>
+  <path d="M120 24 171 80 120 136 69 80Z" fill="none" stroke="#b69b67" stroke-width="3"/>
+  <circle cx="120" cy="80" r="14" fill="#b69b67"/>
+</svg>

@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_shelter_ai",
+  "worldId": "zombie",
+  "name": "방공호 AI",
+  "description": "모든 문을 잠그라는 명령과 모두를 살리라는 명령 사이에서 깨어난 관리 지능.",
+  "entityType": "ai",
+  "image": "images/entities/zombie_shelter_ai.svg",
+  "weight": 50,
+  "timeUnit": "전원 주기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "zombie_shelter_ai_place_0",
+      "name": "지하 관제실",
+      "description": "지하 관제실에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "zombie_shelter_ai_place_1",
+      "name": "이동식 대피차",
+      "description": "이동식 대피차에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "zombie_shelter_ai_trait_0",
+      "name": "정확한 배분",
+      "description": "정확한 배분 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "zombie_shelter_ai_trait_1",
+      "name": "목소리 모사",
+      "description": "목소리 모사 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "zombie_shelter_ai_flaw_0",
+      "name": "낡은 배터리",
+      "description": "낡은 배터리 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "zombie_shelter_ai_flaw_1",
+      "name": "모순된 명령",
+      "description": "모순된 명령 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "zombie_shelter_ai_fate_0",
+      "name": "문밖의 가족",
+      "description": "문밖의 가족. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_fate_0",
+        "zombie_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "zombie_shelter_ai_fate_1",
+      "name": "마지막 백업",
+      "description": "마지막 백업. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "zombie_shelter_ai_fate_1",
+        "zombie_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 70,
+    "influence": 45,
+    "intelligence": 70,
+    "freedom": 15,
+    "chaos": 20
+  },
+  "tags": [
+    "ai",
+    "shelter_ai"
+  ]
+}

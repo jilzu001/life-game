@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_ending_reversal",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "title": "제품 번호 밖으로",
+  "description": "정해진 용도를 벗어나 스스로 쓰일 곳을 골랐다. 몸과 기억이 달라져도 처음 품었던 질문은 그대로였다.",
+  "image": "images/endings/cyberpunk_reversal.svg",
+  "priority": 70,
+  "isDefault": false,
+  "conditions": {
+    "type": "flag",
+    "key": "cyberpunk_reversal",
+    "operator": "equals",
+    "value": true
+  }
+}

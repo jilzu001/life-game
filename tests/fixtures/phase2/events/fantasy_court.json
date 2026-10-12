@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_court",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "무기고의 출생 장부",
+  "description": "왕실 서기가 당신의 이름 옆에 적힌 빈 왕관 문양을 발견한다. 군수품 장부에 왕위 계승란이 있는 이유는 아무도 설명하지 못한다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "royal_property",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "trail_read",
+        "operator": "equals",
+        "value": false
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "keep",
+      "text": "장부를 증거로 보관한다",
+      "resultText": "공식 기록을 손에 넣었다. 서약을 지킨다면 증언에 힘이 실릴 것이다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "trail_read",
+          "value": true
+        },
+        {
+          "op": "addItem",
+          "key": "birth_record"
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "erase",
+      "text": "소유자 칸을 지운다",
+      "resultText": "소유권은 지웠지만 출생의 흔적은 기억 속에 남겼다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "trail_read",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "nextEventId": "fantasy_workshop"
+}

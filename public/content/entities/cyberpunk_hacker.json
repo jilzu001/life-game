@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_hacker",
+  "worldId": "cyberpunk",
+  "name": "인간 해커",
+  "description": "자기 이름으로 접속할 수 없는 도시에서 타인의 계정 문제를 해결하며 산다.",
+  "entityType": "human",
+  "image": "images/entities/cyberpunk_hacker.svg",
+  "weight": 50,
+  "timeUnit": "접속 세션",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "cyberpunk_hacker_place_0",
+      "name": "고가도로 아래",
+      "description": "고가도로 아래에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_hacker_place_1",
+      "name": "기업 기숙사",
+      "description": "기업 기숙사에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "cyberpunk_hacker_trait_0",
+      "name": "패턴 독해",
+      "description": "패턴 독해 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_hacker_trait_1",
+      "name": "인맥 관리",
+      "description": "인맥 관리 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "cyberpunk_hacker_flaw_0",
+      "name": "임대 의수",
+      "description": "임대 의수 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_hacker_flaw_1",
+      "name": "기억 공백",
+      "description": "기억 공백 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "cyberpunk_hacker_fate_0",
+      "name": "이름 없는 계정",
+      "description": "이름 없는 계정. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_fate_0",
+        "cyberpunk_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "cyberpunk_hacker_fate_1",
+      "name": "공공의 열쇠",
+      "description": "공공의 열쇠. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_hacker_fate_1",
+        "cyberpunk_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 50,
+    "influence": 35,
+    "intelligence": 75,
+    "freedom": 50,
+    "chaos": 35
+  },
+  "tags": [
+    "human",
+    "hacker"
+  ]
+}

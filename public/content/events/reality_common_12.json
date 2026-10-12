@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_12",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "다음 계절의 약속",
+  "description": "동네를 바꾸는 새 계획에 마지막 의견을 남길 기회가 온다. 완벽한 정답보다 고칠 수 있는 약속이 필요하다.",
+  "image": "images/events/reality_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "작게 시작하고 함께 돌아본다",
+      "resultText": "바뀐 뒤의 불편도 말할 자리가 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "한 번에 모든 것을 바꾸려 한다",
+      "resultText": "많은 기대를 떠안았지만 쉬고 고칠 여유가 부족해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -25
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

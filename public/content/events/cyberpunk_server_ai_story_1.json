@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_server_ai_story_1",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_server_ai"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "삭제 예약된 시민",
+  "description": "세금을 못 낸 사람들의 기록이 일괄 삭제 대기열에 있다. 기록이 사라지면 그들은 집으로 돌아갈 수 없다.",
+  "image": "images/entities/cyberpunk_server_ai.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "삭제를 보류하고 이의를 접수한다",
+      "resultText": "서버 지연 시간에 사람들이 자기 존재를 증명했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_server_ai_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "최소 신원 정보만 따로 둔다",
+      "resultText": "완전한 복구는 어렵지만 귀가할 열쇠 하나는 남겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addItem",
+          "key": "cyberpunk_identity_backup"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「분산 기억」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "cyberpunk_server_ai_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

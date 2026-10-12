@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "space_parasite_story_2",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_parasite"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "숙주의 항로 변경",
+  "description": "함선이 뜨거운 별 근처로 향한다. 말없이 버티거나 다른 길을 제안할 신호를 찾아야 한다.",
+  "image": "images/entities/space_parasite.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "반복되는 진동으로 위험을 알린다",
+      "resultText": "함선은 처음으로 외벽의 의견을 항해 계획에 넣었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_parasite_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "휴면하며 견딘다",
+      "resultText": "긴 시간을 넘겼지만 몸의 일부를 회복하는 데 오래 걸렸다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「숙주 의존」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "space_parasite_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

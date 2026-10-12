@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_08",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "잊는 일을 돕는 메모",
+  "description": "잊어도 되는 일을 적어 두라는 작은 종이가 건네진다. 모두 기억해야 한다고 믿었던 부담이 조금 흔들린다.",
+  "image": "images/events/universal_gate.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "중요하지 않은 걱정을 내려놓는다",
+      "resultText": "빈틈이 생기자 다음 순간을 돌볼 여유가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기억해야 할 약속만 고른다",
+      "resultText": "짧은 목록이 긴 걱정보다 선명해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "short_list"
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

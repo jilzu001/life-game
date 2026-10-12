@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_mana_stone_story_1",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_mana_stone"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "감정사의 청진기",
+  "description": "감정사가 당신의 공명을 장비 오류라고 부른다. 가격표를 읽는 소리보다 당신의 소리가 먼저 울린다.",
+  "image": "images/entities/hunter_mana_stone.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "규칙적인 응답을 보낸다",
+      "resultText": "측정값 옆에 의사 표현이라는 기록이 처음 붙었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_mana_stone_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "빛을 낮춰 검사를 피한다",
+      "resultText": "당장의 소모를 피했지만 창고에서 기다릴 시간이 길어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「깨끗한 공명」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "hunter_mana_stone_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

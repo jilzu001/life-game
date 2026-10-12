@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_06",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "검역 로봇의 휴일",
+  "description": "체온계가 고장 난 로봇이 누구든 고열로 판정한다. 수리할 동안 문을 열지, 검사를 계속할지 결정해야 한다.",
+  "image": "images/events/zombie_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "검사 기록을 교차 확인한다",
+      "resultText": "엉터리 격리를 멈췄지만 수리 중에는 서로를 살펴야 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "봉쇄를 그대로 유지한다",
+      "resultText": "오늘의 위험은 줄었고 문밖의 불만은 커졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

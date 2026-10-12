@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_adventurer_story_1",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_adventurer"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "지도에 없는 고향",
+  "description": "여행자 조합의 지도에서 당신이 태어난 동네가 빈칸이다. 측량사는 등록료를 내야 길을 그릴 수 있다고 한다.",
+  "image": "images/entities/adventurer.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "직접 걸어 지도를 만든다",
+      "resultText": "골목 이름까지 적힌 지도가 다른 여행자에게 길을 열었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        },
+        {
+          "op": "setFlag",
+          "key": "mapped_home",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_adventurer_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "측량사의 지도를 빌린다",
+      "resultText": "안전한 큰길을 얻었지만 고향은 여전히 여백에 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「이야기꾼」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "storyteller"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_new_body",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_sword"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "칼집 대신 두 발",
+  "description": "편지를 읽은 연금술사가 사람의 몸을 빌려 주겠다고 한다. 검으로 살던 기억까지 지워 준다는 말에 당신은 그 부분만 계약서에서 지운다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "fate_seen",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "human",
+      "text": "기억을 간직한 채 인간이 된다",
+      "resultText": "칼날의 기억을 품은 모험가가 첫 발을 내디뎠다.",
+      "effects": [
+        {
+          "op": "transformEntity",
+          "entityId": "fantasy_adventurer"
+        },
+        {
+          "op": "setFlag",
+          "key": "reborn_human",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 20
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "blade",
+      "text": "검의 모습으로 뜻을 지킨다",
+      "resultText": "모습을 바꾸지 않아도 선택의 주인은 바꿀 수 있었다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "iron_vow",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

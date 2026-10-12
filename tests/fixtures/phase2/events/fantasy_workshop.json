@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_workshop",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "대장장이의 건강검진",
+  "description": "대장장이는 망치로 건강 상태를 듣는다. 철이든 살이든 자기 방식이 통한다고 주장하지만 보증서는 주지 않는다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "trail_read",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "repair",
+      "text": "약한 곳을 보강한다",
+      "resultText": "균열을 메우고 오래 버틸 여유를 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addTag",
+          "key": "reinforced"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "overclock",
+      "text": "출력을 한계까지 끌어올린다",
+      "resultText": "힘은 늘었지만 수명이 내는 소리도 커졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -10
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

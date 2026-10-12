@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_mana_stone_story_3",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_mana_stone"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "연료에서 비상등으로",
+  "description": "병원은 당신을 한 번 태우는 대신 약한 빛으로 오래 켜 두자고 제안한다. 가격은 낮아지지만 살아갈 시간이 길어진다.",
+  "image": "images/entities/hunter_mana_stone.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "오래 켜지는 비상등이 된다",
+      "resultText": "밤마다 누군가의 귀가길을 비추는 이름을 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_mana_stone_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "마나 기록을 남기고 연구소로 간다",
+      "resultText": "몸을 쓰는 방법을 스스로 설명할 기회가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "감정사의 청진기에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "hunter_mana_stone_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

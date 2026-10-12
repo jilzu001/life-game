@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "space_asteroid_story_3",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_asteroid"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "돌 위의 첫 싹",
+  "description": "정비소에서 새어 나온 씨앗이 작은 틈에 뿌리를 내린다. 광맥보다 쓸모없다던 빈 공간이 살아 움직인다.",
+  "image": "images/entities/space_asteroid.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "그늘과 물 저장고를 내준다",
+      "resultText": "작은 천체가 떠도는 정원이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_asteroid_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "성장 기록을 다른 정거장에 보낸다",
+      "resultText": "싹은 옮겨 갔지만 당신의 틈에서 시작한 숲이라는 기록이 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "광맥의 첫 계약에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "space_asteroid_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

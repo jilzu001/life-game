@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_dragon_tax",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "드래곤의 보물세",
+  "description": "드래곤이 자신이 모은 보물에 세금을 매기겠다고 선언했다. 당신이 보물인지 납세자인지부터 합의가 필요하다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  },
+  "choices": [
+    {
+      "id": "negotiate",
+      "text": "보물도 동의할 권리가 있다고 주장한다",
+      "resultText": "드래곤은 불만스러워했지만 동의서를 만들었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "hide",
+      "text": "보물 더미에 숨어 버틴다",
+      "resultText": "황금보다 단단한 바닥에서 긴 시간을 견뎠다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

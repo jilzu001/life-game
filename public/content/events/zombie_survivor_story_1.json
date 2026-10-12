@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_survivor_story_1",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_survivor"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "옥상에 남은 운동화",
+  "description": "옆 건물로 건너갈 밧줄 끝에 아이의 운동화가 묶여 있다. 건물 안에는 아직 구조를 기다리는 표시가 있다.",
+  "image": "images/entities/zombie_survivor.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "구조 경로를 표시한다",
+      "resultText": "길을 알린 덕분에 여러 사람이 함께 돌아갈 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_rescued",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_survivor_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "밧줄만 챙긴다",
+      "resultText": "좋은 도구를 얻었지만 옥상을 볼 때마다 걸음이 늦어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "zombie_rope"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「수선 손재주」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "zombie_survivor_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

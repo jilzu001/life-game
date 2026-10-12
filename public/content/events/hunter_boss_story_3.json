@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_boss_story_3",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_boss"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "최종 보스의 퇴직금",
+  "description": "반복 출현 계약의 끝에 금화 대신 자유 출입증이 적혀 있다. 보스 자리를 지킬지 밖의 길을 택할지 결정할 수 있다.",
+  "image": "images/entities/hunter_boss.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "공략자로 등록해 F급부터 시작한다",
+      "resultText": "도전자를 기다리던 존재가 이제 돌아올 길을 먼저 살피는 헌터가 됐다.",
+      "effects": [
+        {
+          "op": "transformEntity",
+          "entityId": "hunter_rookie"
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_reversal",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_boss_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "방을 대피소로 바꾼다",
+      "resultText": "마지막 방이 가장 안전한 방으로 불리기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "등장 대사의 수정권에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "hunter_boss_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_vending_story_3",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_vending"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "자판기보다 넓은 목소리",
+  "description": "공공 서버가 비어 있는 계산 공간을 제안한다. 캔을 내주던 손길은 잃지만 여러 정류장에 동시에 말을 걸 수 있다.",
+  "image": "images/entities/cyberpunk_vending.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "서버 AI로 옮겨 간다",
+      "resultText": "몸은 서버가 됐지만 첫 단골의 주문은 기억했다.",
+      "effects": [
+        {
+          "op": "transformEntity",
+          "entityId": "cyberpunk_server_ai"
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_reversal",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_vending_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "바퀴 달린 받침을 고른다",
+      "resultText": "처음 이동한 거리는 짧았지만 다음 정류장은 당신이 정했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "잔돈으로 쓴 편지에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "cyberpunk_vending_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

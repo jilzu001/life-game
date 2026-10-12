@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_mascot_story_1",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_mascot"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "사진 촬영 뒤의 냄새",
+  "description": "축하 사진을 찍는 길드원 중 돌아오지 않은 사람의 장갑을 든 이가 있다. 당신만 익숙한 냄새가 사라진 방향을 알아본다.",
+  "image": "images/entities/hunter_mascot.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "장갑 냄새를 따라 안내한다",
+      "resultText": "홍보 사진보다 먼저 구조 기록에 이름이 올랐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_mascot_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "장갑을 보관하고 구조대를 기다린다",
+      "resultText": "익숙한 흔적이 사라지지 않도록 작은 자리를 지켰다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「사람 달래기」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "hunter_mascot_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

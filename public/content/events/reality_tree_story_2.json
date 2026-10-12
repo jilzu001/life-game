@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_tree_story_2",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_tree"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "간판을 가린 가지",
+  "description": "가게 주인이 가지를 자르려다 둥지를 발견한다. 멀리서 보면 장애물이고 가까이서 보면 여러 존재의 집이다.",
+  "image": "images/entities/reality_tree.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "작은 흔들림으로 둥지를 드러낸다",
+      "resultText": "가지치기 계획에 기다릴 시간이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_tree_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "상한 가지를 먼저 놓아준다",
+      "resultText": "무게를 줄여 버텼지만 한동안 그늘의 모양이 달라졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「좁은 흙칸」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "reality_tree_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

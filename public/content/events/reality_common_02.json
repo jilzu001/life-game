@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_02",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "게시판의 잃어버린 것",
+  "description": "누군가 잃어버린 대상을 찾는 종이를 붙였다. 설명은 부정확하지만 기다리는 마음만큼은 선명하다.",
+  "image": "images/events/reality_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "보이는 단서를 연결한다",
+      "resultText": "작은 관찰이 이웃의 다음 발걸음을 도왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기다릴 자리를 지킨다",
+      "resultText": "누군가 돌아왔을 때 찾을 수 있는 표식으로 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_tree_story_1",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_tree"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "작은 흙칸의 여름",
+  "description": "뜨거운 보도 아래로 뿌리를 뻗을 자리가 없다. 당신의 그늘에 쉬던 사람이 마른 흙을 들여다본다.",
+  "image": "images/entities/reality_tree.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "잎을 낮춰 그늘을 남긴다",
+      "resultText": "쉬어 가던 사람들이 물을 가져오는 습관이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_tree_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "잎을 줄여 수분을 지킨다",
+      "resultText": "그늘은 작아져도 다음 계절을 버틸 힘을 남겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「깊은 뿌리」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "reality_tree_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_04",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "버리기 전에 묻는 날",
+  "description": "동네 청소가 시작되며 낡은 것은 모두 한곳에 모인다. 오래됐다는 이유만으로 쓸모를 판단하기 어렵다.",
+  "image": "images/events/reality_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "남길 이유를 주변에 알린다",
+      "resultText": "함께 쓴 기억이 수거 목록의 몇 줄을 바꿨다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "새로운 쓰임을 찾아 이동한다",
+      "resultText": "있던 자리와 달라도 다음 역할을 찾을 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

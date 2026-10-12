@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_08",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "약관을 읽는 광장",
+  "description": "시민들이 백만 줄짜리 약관을 한 줄씩 나눠 읽기 시작한다. 끝까지 읽은 사람에게만 발언권을 준다는 규정이 발견된다.",
+  "image": "images/events/cyberpunk_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "함께 읽은 결과를 공동 서명한다",
+      "resultText": "개인이 감당할 수 없던 문서를 도시가 고치기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "문서를 통째로 삭제한다",
+      "resultText": "악조건도 안전장치도 함께 사라졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "주어진 용도 밖의 선택을 공개한다",
+      "resultText": "상품 설명에 없던 삶이 다른 존재에게도 가능성이 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "cyberpunk_fate_1",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

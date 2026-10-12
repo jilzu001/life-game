@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_11",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "완벽한 순서의 함정",
+  "description": "모든 일이 순서대로만 진행되는 계획표를 받았다. 앞의 일이 멈추면 뒤의 작은 도움도 할 수 없다고 한다.",
+  "image": "images/events/universal_storm.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "독립적으로 할 수 있는 일을 찾는다",
+      "resultText": "계획은 덜 멋져졌지만 멈춰 있던 하루가 움직였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "정해진 순서를 기다린다",
+      "resultText": "혼란은 피했지만 기다리는 동안 자원이 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

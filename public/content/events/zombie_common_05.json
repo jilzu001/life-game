@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_05",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "문을 두드리는 무리",
+  "description": "밤중에 경계선 밖에서 규칙적인 두드림이 들린다. 공격 신호인지 오래된 인사인지 아무도 확신하지 못한다.",
+  "image": "images/events/zombie_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "벽 너머로 같은 박자를 보낸다",
+      "resultText": "두드림이 멎고 종이에 그린 지도가 들어왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "zombie_outside_map"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "경보를 크게 울린다",
+      "resultText": "모두가 깨어났지만 신호를 보낸 존재는 돌아오지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

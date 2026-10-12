@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_07",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "태어나기 전의 접속 기록",
+  "description": "등록된 생성 시간보다 오래된 당신의 접속 기록이 발견됐다. 기록 끝에는 아직 만나지 않은 존재의 초대가 남아 있다.",
+  "image": "images/events/cyberpunk_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "초대를 검증하고 응답한다",
+      "resultText": "그 흔적이 어떤 운명을 가리키는지 알게 됐다. 다음 접속은 스스로 골랐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기록을 여러 곳에 보관한다",
+      "resultText": "하나의 서버가 당신의 과거를 독점할 수 없게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "태어날 때부터 이어진 신호에 응답한다",
+      "resultText": "우연인 줄 알았던 흔적이 숨겨진 운명과 이어졌다. 강요된 결말 대신 스스로 맡을 몫을 정했다.",
+      "conditions": {
+        "type": "flag",
+        "key": "cyberpunk_fate_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

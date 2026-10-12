@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_03",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "감정 데이터 야시장",
+  "description": "오늘 느낀 기쁨을 팔면 한 주의 전력을 살 수 있다. 판매한 감정은 독점 상품이 되어 다시 느껴도 계약 위반이다.",
+  "image": "images/events/cyberpunk_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "사본만 나누는 계약을 맺는다",
+      "resultText": "기억의 주인이 누구인지 묻는 약관이 처음 붙었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_promise",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "전력과 맞바꾼다",
+      "resultText": "일주일은 편해졌지만 기쁜 순간마다 고지서가 떠올랐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

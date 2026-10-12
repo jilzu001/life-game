@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_boss",
+  "worldId": "hunter",
+  "name": "던전 보스",
+  "description": "도전자보다 근무표가 더 무서운 마지막 방의 주인.",
+  "entityType": "creature",
+  "image": "images/entities/hunter_boss.svg",
+  "weight": 50,
+  "timeUnit": "재출현",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "hunter_boss_place_0",
+      "name": "마지막 방",
+      "description": "마지막 방에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "hunter_boss_place_1",
+      "name": "임시 던전",
+      "description": "임시 던전에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "hunter_boss_trait_0",
+      "name": "위엄 있는 포효",
+      "description": "위엄 있는 포효 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "hunter_boss_trait_1",
+      "name": "부하 상담",
+      "description": "부하 상담 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "hunter_boss_flaw_0",
+      "name": "고정된 동선",
+      "description": "고정된 동선 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "hunter_boss_flaw_1",
+      "name": "예고되는 공격",
+      "description": "예고되는 공격 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "hunter_boss_fate_0",
+      "name": "보스의 휴일",
+      "description": "보스의 휴일. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_fate_0",
+        "hunter_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "hunter_boss_fate_1",
+      "name": "출구의 수호자",
+      "description": "출구의 수호자. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "hunter_boss_fate_1",
+        "hunter_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 85,
+    "influence": 55,
+    "intelligence": 45,
+    "freedom": 15,
+    "chaos": 40
+  },
+  "tags": [
+    "creature",
+    "boss"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_rookie_story_3",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_rookie"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "승급 대신 지도 제작자",
+  "description": "평가관이 전투 점수는 낮지만 당신의 지도로 사고가 줄었다고 말한다. 승급 시험과 새로운 직무 중 하나를 고를 수 있다.",
+  "image": "images/entities/hunter_rookie.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "안전 항로 담당자가 된다",
+      "resultText": "등급을 올리는 대신 등급표에 없던 일을 만들었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_rookie_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "동료와 승급 시험을 준비한다",
+      "resultText": "혼자 증명하던 실력을 함께 점검할 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "F급 전용 입구에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "hunter_rookie_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

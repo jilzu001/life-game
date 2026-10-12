@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "space_parasite_story_3",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_parasite"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "혼자 쓰는 작은 돛",
+  "description": "정비사가 버린 반사막이 당신의 몸보다 조금 크다. 다음 여행에는 숙주 대신 이 작은 돛을 쓸 수 있다.",
+  "image": "images/entities/space_parasite.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "돛을 펴고 독립한다",
+      "resultText": "처음 정한 목적지는 가까웠지만 온전히 자신의 항로였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 20
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_parasite_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "함선과 정식 공생 계약을 맺는다",
+      "resultText": "함께 간다는 말에 이번에는 당신의 동의가 포함됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "선체 청소의 오해에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "space_parasite_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

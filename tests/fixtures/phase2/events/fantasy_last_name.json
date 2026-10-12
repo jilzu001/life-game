@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_last_name",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "마지막 이름을 정하는 밤",
+  "description": "당신을 부르는 이름이 너무 많아 별들이 헷갈리기 시작했다. 칼날의 이름도, 사람의 이름도, 지나온 선택을 모두 담을 수는 없다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  },
+  "choices": [
+    {
+      "id": "remember",
+      "text": "처음의 이름을 간직한다",
+      "resultText": "모습이 달라져도 처음 깨어난 순간을 잊지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "rename",
+      "text": "스스로 새 이름을 짓는다",
+      "resultText": "이름을 정하는 권리만은 누구에게도 빌리지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

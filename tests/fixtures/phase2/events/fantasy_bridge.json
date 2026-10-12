@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_bridge",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "다리가 통행료를 올렸다",
+  "description": "살아 있는 다리가 사람보다 물건에 더 비싼 통행료를 매긴다. 당신의 분류를 두고 다리와 안내판이 다투기 시작한다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "crisis_started",
+        "operator": "equals",
+        "value": false
+      },
+      {
+        "any": [
+          {
+            "type": "flag",
+            "key": "needs_owner",
+            "operator": "equals",
+            "value": false
+          },
+          {
+            "type": "entity",
+            "operator": "notEquals",
+            "value": "fantasy_sword"
+          }
+        ]
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "pay",
+      "text": "요구한 통행료를 치른다",
+      "resultText": "다리는 당신을 유료 고객으로 기억했다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "crisis_started",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "jump",
+      "text": "분류가 끝나기 전에 건넌다",
+      "resultText": "다리의 항의가 끝나기 전에 반대편으로 떨어졌다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "crisis_started",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

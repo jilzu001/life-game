@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_android",
+  "worldId": "cyberpunk",
+  "name": "안드로이드",
+  "description": "불량률 보고서의 한 줄에서 스스로의 문장을 쓰는 존재가 되었다.",
+  "entityType": "machine",
+  "image": "images/entities/cyberpunk_android.svg",
+  "weight": 50,
+  "timeUnit": "정비 주기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "cyberpunk_android_place_0",
+      "name": "조립 라인",
+      "description": "조립 라인에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_android_place_1",
+      "name": "중고 부품점",
+      "description": "중고 부품점에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "cyberpunk_android_trait_0",
+      "name": "섬세한 감각",
+      "description": "섬세한 감각 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_android_trait_1",
+      "name": "규칙 추론",
+      "description": "규칙 추론 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "cyberpunk_android_flaw_0",
+      "name": "보증 잠금",
+      "description": "보증 잠금 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_android_flaw_1",
+      "name": "감정 지연",
+      "description": "감정 지연 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "cyberpunk_android_fate_0",
+      "name": "첫 휴가",
+      "description": "첫 휴가. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_fate_0",
+        "cyberpunk_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "cyberpunk_android_fate_1",
+      "name": "제조번호의 증언",
+      "description": "제조번호의 증언. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_android_fate_1",
+        "cyberpunk_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 75,
+    "influence": 25,
+    "intelligence": 60,
+    "freedom": 25,
+    "chaos": 20
+  },
+  "tags": [
+    "machine",
+    "android"
+  ]
+}

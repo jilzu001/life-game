@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_05",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "중력 파업",
+  "description": "항로의 천체들이 통행 때문에 궤도가 흔들린다며 우회하라고 요구한다. 가장 빠른 길과 가장 오래 쓸 길이 다르다.",
+  "image": "images/events/space_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "궤도 안정 시간을 보장한다",
+      "resultText": "길은 길어졌지만 다음 항해도 같은 좌표를 쓸 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "space_promise",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "중력 틈을 강제로 통과한다",
+      "resultText": "짧은 길 끝에 예상보다 많은 파편이 따라왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -18
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

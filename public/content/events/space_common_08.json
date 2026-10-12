@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_08",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "항로의 공청회",
+  "description": "행성 주민과 떠도는 존재가 같은 길의 소유권을 주장한다. 정착하지 않은 존재에게 투표권은 없다는 규칙이 문제다.",
+  "image": "images/events/space_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "사용자 모두의 발언권을 정한다",
+      "resultText": "고정된 주소 없이도 길의 미래를 말할 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "항로 표지를 지워 버린다",
+      "resultText": "독점은 끊었지만 처음 오는 존재도 길을 잃었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "space_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "정해진 좌표 옆에 새 항로를 남긴다",
+      "resultText": "예측된 궤도 밖에서 누군가가 따라올 작은 길이 열렸다.",
+      "conditions": {
+        "type": "flag",
+        "key": "space_fate_1",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "space_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

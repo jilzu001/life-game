@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_shelter",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "안전한 방의 잠금장치",
+  "description": "안전한 방에 들어왔지만 잠금장치는 안쪽에 없다. 관리인은 보호와 감금의 차이를 다음 달에 정하겠다고 한다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "crisis_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "cursed",
+        "operator": "equals",
+        "value": false
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "rest",
+      "text": "잠시 안전을 택한다",
+      "resultText": "회복하는 동안 바깥의 소문은 조금 멀어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "unlock",
+      "text": "잠금장치를 해체한다",
+      "resultText": "나가는 길을 알아냈다. 언젠가 다른 누군가도 이 길을 쓸 것이다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

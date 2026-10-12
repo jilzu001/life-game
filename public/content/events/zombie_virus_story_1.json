@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_virus_story_1",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_virus"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "차가운 숙주의 노래",
+  "description": "당신이 머무는 작은 환경에서 주기적인 진동이 들린다. 더 퍼질수록 그 진동이 약해진다.",
+  "image": "images/entities/zombie_virus.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "퍼짐을 늦추고 휴면한다",
+      "resultText": "낯선 리듬과 함께 오래 머무를 시간을 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -8
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_coexist",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_virus_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "빈 영역으로 무작정 뻗는다",
+      "resultText": "활동 범위는 늘었지만 오래 버틸 자리는 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「환경 감지」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "zombie_virus_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

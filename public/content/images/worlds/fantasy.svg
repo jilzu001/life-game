@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="달 아래의 성">
+  <rect width="240" height="160" rx="16" fill="#141b2c"/>
+  <circle cx="182" cy="40" r="21" fill="#e8ce85"/>
+  <path d="M0 135 44 94 80 125 148 76 240 131V160H0Z" fill="#26334a"/>
+  <path d="M60 139V79H79V62H99V83H141V62H161V79H180V139Z" fill="#8fa1b6"/>
+  <path d="M107 139V112Q120 94 133 112V139" fill="#141b2c"/>
+  <path d="M79 62 89 41 99 62M141 62 151 41 161 62" fill="#b69b67"/>
+</svg>

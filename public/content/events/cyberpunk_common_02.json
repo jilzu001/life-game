@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_02",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "광고가 먼저 건넨 사과",
+  "description": "벽면 광고가 당신의 고민을 맞히고 사과문을 띄운다. 누가 개인정보를 팔았는지 물으니 광고 속 인물이 눈을 피한다.",
+  "image": "images/events/cyberpunk_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "정보 출처를 공개하라고 요구한다",
+      "resultText": "마침내 출처 기록 한 조각을 받았다. 사과를 검증할 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "cyberpunk_receipt"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "할인권으로 합의한다",
+      "resultText": "당장의 비용은 줄었지만 광고는 더 정확해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

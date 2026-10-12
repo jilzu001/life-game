@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_03",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "별자리 명명권",
+  "description": "측량 조합이 아직 이름 없는 빛을 팔고 있다. 관측자가 달라지면 별자리 모양도 달라진다는 설명은 작은 글씨다.",
+  "image": "images/events/space_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "여러 관측점을 함께 기록한다",
+      "resultText": "서로 다른 하늘을 하나의 이름으로 강요하지 않는 지도가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "자기 이름을 붙인다",
+      "resultText": "멀리 이름이 퍼졌지만 다른 관측자들의 이의가 따라왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

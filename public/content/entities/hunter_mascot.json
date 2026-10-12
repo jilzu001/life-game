@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_mascot",
+  "worldId": "hunter",
+  "name": "길드 마스코트",
+  "description": "던전 밖에서 사진을 찍던 존재가 귀환하지 않은 사람들의 냄새를 기억한다.",
+  "entityType": "creature",
+  "image": "images/entities/hunter_mascot.svg",
+  "weight": 50,
+  "timeUnit": "홍보 시즌",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "hunter_mascot_place_0",
+      "name": "길드 접수대",
+      "description": "길드 접수대에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "hunter_mascot_place_1",
+      "name": "구조 동물실",
+      "description": "구조 동물실에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "hunter_mascot_trait_0",
+      "name": "사람 달래기",
+      "description": "사람 달래기 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "hunter_mascot_trait_1",
+      "name": "행운 감지",
+      "description": "행운 감지 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "hunter_mascot_flaw_0",
+      "name": "귀여움 노동",
+      "description": "귀여움 노동 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "hunter_mascot_flaw_1",
+      "name": "겁 많은 심장",
+      "description": "겁 많은 심장 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "hunter_mascot_fate_0",
+      "name": "실종자 안내",
+      "description": "실종자 안내. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_fate_0",
+        "hunter_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "hunter_mascot_fate_1",
+      "name": "작은 길드장",
+      "description": "작은 길드장. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mascot_fate_1",
+        "hunter_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 50,
+    "influence": 65,
+    "intelligence": 40,
+    "freedom": 45,
+    "chaos": 35
+  },
+  "tags": [
+    "creature",
+    "mascot"
+  ]
+}

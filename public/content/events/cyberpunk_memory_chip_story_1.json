@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_memory_chip_story_1",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_memory_chip"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "같은 추억의 두 주인",
+  "description": "서로 모르는 두 사람이 당신 속의 여름을 자신의 기억이라고 주장한다. 기억에는 두 사람의 그림자가 모두 있다.",
+  "image": "images/entities/cyberpunk_memory_chip.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "함께 재생할 자리를 만든다",
+      "resultText": "독점하려던 하루가 함께 보낸 날이었다는 걸 알게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_memory_chip_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "재생을 멈추고 보관한다",
+      "resultText": "분쟁은 길어졌지만 기억이 거래로 손상되지는 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「감정 압축」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "cyberpunk_memory_chip_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

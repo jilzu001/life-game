@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_adventurer",
+  "worldId": "fantasy",
+  "name": "인간 모험가",
+  "description": "누군가가 적어 둔 운명보다 다음 갈림길을 믿는 여행자.",
+  "entityType": "human",
+  "image": "images/entities/adventurer.svg",
+  "weight": 50,
+  "timeUnit": "여정",
+  "birthStory": "{world}의 {location}에서 당신은 {entity}으로 태어났다. {trait} 덕에 길을 나설 수 있었지만 {flaw}이라는 문제도 함께 따라왔다.",
+  "birthLocations": [
+    {
+      "id": "royal_quarter",
+      "name": "왕도 뒷골목",
+      "description": "왕실 장부에 이름만 올려진 아이.",
+      "weight": 60,
+      "flags": [
+        "royal_property"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "id": "ruin_outpost",
+      "name": "유적 개척촌",
+      "description": "잊힌 문 옆에서 자란 아이.",
+      "weight": 40,
+      "flags": [
+        "ancient_origin"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "storyteller",
+      "name": "이야기꾼",
+      "description": "말로 싸움을 끝내는 재주.",
+      "weight": 50,
+      "flags": [
+        "can_speak"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addTag",
+          "key": "speaking"
+        }
+      ]
+    },
+    {
+      "id": "rune_reader",
+      "name": "룬 독해",
+      "description": "오래된 문자를 읽는 눈.",
+      "weight": 50,
+      "flags": [],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 15
+        },
+        {
+          "op": "addItem",
+          "key": "mana_fragment"
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "fragile",
+      "name": "약한 체력",
+      "description": "긴 여정에 쉽게 지친다.",
+      "weight": 50,
+      "flags": [],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "debtor",
+      "name": "물려받은 빚",
+      "description": "출발하기 전부터 적힌 청구서.",
+      "weight": 50,
+      "flags": [],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "crown_witness",
+      "name": "왕관의 증인",
+      "description": "다음 왕을 결정할 증언을 맡게 된다.",
+      "weight": 60,
+      "flags": [
+        "fate_crown_witness"
+      ],
+      "effects": [],
+      "conditions": {
+        "type": "flag",
+        "key": "royal_property",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "sealed_gate_key",
+      "name": "봉인의 계승자",
+      "description": "잊힌 문이 당신의 목소리를 열쇠로 기억한다.",
+      "weight": 40,
+      "flags": [
+        "fate_sealed_gate_key"
+      ],
+      "effects": [],
+      "conditions": {
+        "type": "flag",
+        "key": "ancient_origin",
+        "operator": "equals",
+        "value": true
+      }
+    }
+  ],
+  "initialStats": {
+    "survival": 65,
+    "influence": 25,
+    "intelligence": 40,
+    "freedom": 50,
+    "chaos": 20
+  },
+  "tags": [
+    "human",
+    "traveler"
+  ]
+}

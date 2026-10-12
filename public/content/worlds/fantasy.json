@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy",
+  "name": "중세 판타지",
+  "description": "검도 던전도 자기 몫의 삶을 요구하는 검과 마법의 세계.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 100,
+  "entityIds": [
+    "fantasy_sword",
+    "fantasy_adventurer",
+    "fantasy_slime",
+    "fantasy_dragon",
+    "fantasy_dungeon"
+  ]
+}

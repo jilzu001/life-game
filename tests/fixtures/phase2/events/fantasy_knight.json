@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_knight",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "동행 계약서",
+  "description": "기사는 왕실도 모르는 작은 글씨로 계약을 썼다. 서로를 버리지 않는다는 약속 하나가 전쟁 배상 조항보다 길다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "any": [
+      {
+        "type": "choice",
+        "eventId": "fantasy_first_voice",
+        "choiceId": "trust",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "choice",
+        "eventId": "fantasy_first_voice",
+        "choiceId": "speak",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "pledge",
+      "text": "서로를 지키기로 서약한다",
+      "resultText": "왕실 인장을 받았다. 이제 출생지에 남긴 기록을 열어 볼 수 있다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "oath",
+          "value": true
+        },
+        {
+          "op": "addItem",
+          "key": "royal_seal"
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "leave",
+      "text": "계약 없이 동행한다",
+      "resultText": "기사의 호의는 받되 목줄이 될 서명은 남기지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        }
+      ],
+      "branches": [],
+      "nextEventId": "fantasy_market"
+    }
+  ],
+  "branches": [
+    {
+      "conditions": {
+        "type": "flag",
+        "key": "royal_property",
+        "operator": "equals",
+        "value": true
+      },
+      "nextEventId": "fantasy_court"
+    },
+    {
+      "conditions": {
+        "type": "flag",
+        "key": "ancient_origin",
+        "operator": "equals",
+        "value": true
+      },
+      "nextEventId": "fantasy_ruins"
+    }
+  ]
+}

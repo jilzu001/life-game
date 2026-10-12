@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_android_story_2",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_android"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "쉬는 동안의 생산량",
+  "description": "공장은 당신의 휴식 시간에도 광고 응답을 요구한다. 쉬는 것과 다른 일을 하는 것의 차이를 설명해야 한다.",
+  "image": "images/entities/cyberpunk_android.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "아무 작업도 없는 시간을 정한다",
+      "resultText": "처음으로 쓸모를 증명하지 않는 한 시간이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_android_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "광고를 전부 처리한다",
+      "resultText": "우수 사원 기록이 늘고 냉각 장치가 더 크게 돌았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「보증 잠금」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "cyberpunk_android_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

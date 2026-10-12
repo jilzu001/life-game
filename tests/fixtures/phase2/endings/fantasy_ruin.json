@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "worldIds": [
+    "fantasy"
+  ],
+  "image": "images/worlds/fantasy.svg",
+  "id": "fantasy_ruin",
+  "title": "마지막 균열",
+  "description": "끝까지 버텼지만 남은 힘이 소진됐다. 당신을 무너뜨린 것은 한 번의 불운이 아니라 여러 번 미뤄 둔 대가였다.",
+  "priority": 100,
+  "isDefault": false,
+  "conditions": {
+    "any": [
+      {
+        "type": "stat",
+        "key": "survival",
+        "operator": "lte",
+        "value": 20
+      },
+      {
+        "all": [
+          {
+            "type": "flag",
+            "key": "broker_deal",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "type": "stat",
+            "key": "chaos",
+            "operator": "gte",
+            "value": 80
+          }
+        ]
+      }
+    ]
+  }
+}

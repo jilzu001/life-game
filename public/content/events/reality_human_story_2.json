@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_human_story_2",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_human"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "잘한다는 이유로 늘어난 일",
+  "description": "남들이 믿고 맡긴 일이 쉬는 시간을 채웠다. 거절하면 실망할까 걱정되지만 집중할 힘도 떨어진다.",
+  "image": "images/entities/reality_human.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "할 수 있는 범위를 말한다",
+      "resultText": "맡을 일을 줄이자 약속을 더 잘 지킬 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_human_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "이번만 더 맡는다",
+      "resultText": "고마움은 받았지만 쉬어야 한다는 신호를 또 미뤘다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -18
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「불규칙한 잠」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "reality_human_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

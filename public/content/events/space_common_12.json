@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_12",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "돌아가는 길의 중심",
+  "description": "많은 항로가 당신의 주변을 거쳐 가기 시작한다. 중심이 되면 편하지만 당신이 멈추면 모두 멈춘다.",
+  "image": "images/events/space_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "여러 중계점을 함께 세운다",
+      "resultText": "당신을 거치지 않아도 서로에게 닿는 길이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "모든 흐름을 한곳으로 모은다",
+      "resultText": "큰 힘이 모였고 작은 이상도 거대한 위험이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -25
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "space_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

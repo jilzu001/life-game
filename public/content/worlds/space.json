@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "space",
+  "name": "우주 SF",
+  "description": "침묵하는 우주에서 생명체와 우주선과 천체가 서로의 궤도를 바꾼다.",
+  "image": "images/worlds/space.svg",
+  "weight": 100,
+  "entityIds": [
+    "space_alien",
+    "space_ship",
+    "space_asteroid",
+    "space_blackhole",
+    "space_parasite"
+  ]
+}

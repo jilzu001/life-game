@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_ending_survivor",
+  "worldIds": [
+    "hunter"
+  ],
+  "title": "다음 공략을 기다리며",
+  "description": "모든 게이트를 닫지는 못했다. 그래도 돌아와 쉴 곳과 다음번에 함께할 이름을 남겼다.",
+  "image": "images/endings/hunter_survivor.svg",
+  "priority": 0,
+  "isDefault": true
+}

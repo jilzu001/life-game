@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_11",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "도시 밖의 전원선",
+  "description": "외곽 공동체에서 도심으로 마지막 전력을 보낸다. 도시가 돌려줄 수 있는 것은 돈보다 남는 계산 자원이다.",
+  "image": "images/events/cyberpunk_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "계산 자원을 공개한다",
+      "resultText": "밝은 간판 몇 개가 꺼지고 외곽의 물길 예측이 돌아가기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "전력을 먼저 저장한다",
+      "resultText": "혼자 버틸 시간은 늘었지만 다시 연결할 상대가 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

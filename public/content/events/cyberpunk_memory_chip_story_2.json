@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_memory_chip_story_2",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_memory_chip"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "한 번 더 재생하면",
+  "description": "반복 재생 때문에 회로가 달아오른다. 소유자는 가장 행복했던 한 장면을 마지막으로 보고 싶다고 한다.",
+  "image": "images/entities/cyberpunk_memory_chip.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "안전한 사본을 나눠 남긴다",
+      "resultText": "조금 흐릿하지만 여러 곳에서 다시 볼 수 있는 기억이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_memory_chip_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "원본의 밝기를 끝까지 높인다",
+      "resultText": "장면은 눈부셨지만 당신의 회로는 깊게 상했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -22
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「소유권 분쟁」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "cyberpunk_memory_chip_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

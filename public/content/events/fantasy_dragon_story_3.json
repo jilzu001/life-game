@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_dragon_story_3",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_dragon"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "보물 목록의 마지막 줄",
+  "description": "오래 모은 보물 중 가장 값비싼 항목이 이름 없는 알이다. 누군가 찾아온다면 돌려줘야 할지 고민된다.",
+  "image": "images/entities/fantasy_dragon.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "주인을 찾는 공고를 낸다",
+      "resultText": "알을 기다리던 가족이 찾아왔다. 빈자리에는 답장이 쌓였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "oath",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_dragon_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "금고의 열쇠까지 삼킨다",
+      "resultText": "완벽한 금고가 되었지만 더 이상 자신도 열 수 없었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "동굴의 공시지가에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "fantasy_dragon_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

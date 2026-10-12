@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_12",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "최종 공지의 작성자",
+  "description": "시스템이 당신에게 새 공략 규칙의 서명을 요구한다. 영구 적용이라는 문구가 가장 아래에 붙어 있다.",
+  "image": "images/events/hunter_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "규칙을 다시 고칠 권리도 남긴다",
+      "resultText": "완벽한 공지 대신 오류를 인정할 수 있는 체계를 만들었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "자신의 판단을 영구 규칙으로 만든다",
+      "resultText": "분쟁은 잠시 줄었지만 모든 실패가 당신에게 돌아왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -25
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

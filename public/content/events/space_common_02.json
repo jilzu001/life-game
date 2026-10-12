@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_02",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "우주 우편의 착불료",
+  "description": "인사에 답한 중계기가 착불 우편을 밀어 넣는다. 내용물은 안전 항로이고 요금은 당신이 아는 새로운 길 하나다.",
+  "image": "images/events/space_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "관측한 길을 공유한다",
+      "resultText": "한 줄을 주고 여러 존재가 남긴 항로를 받았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "space_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "비용을 아끼고 멀리 돌아간다",
+      "resultText": "정보를 지키는 대신 긴 구간을 혼자 건너야 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

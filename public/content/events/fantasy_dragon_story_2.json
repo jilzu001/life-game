@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_dragon_story_2",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_dragon"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "불꽃 조리사 채용",
+  "description": "가뭄 때문에 전투용 불을 금지한 마을에서 빵집은 당신을 기다린다. 제빵 온도와 분노의 온도는 꽤 다르다.",
+  "image": "images/entities/fantasy_dragon.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "빵 굽는 법을 배운다",
+      "resultText": "처음 탄 것은 자존심뿐이었다. 이웃에게 빵을 나눌 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_dragon_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "산 위에서 비를 기다린다",
+      "resultText": "마을은 안전했고 당신도 날개를 쉬었다. 배는 조금 고팠다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「날개 흉터」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "fantasy_dragon_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_shelter_ai_story_1",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_shelter_ai"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "정원 초과 한 명",
+  "description": "문 앞의 가족은 세 명인데 빈 침상은 두 개다. 낡은 정원 계산식은 접이식 의자를 침상으로 인정하지 않는다.",
+  "image": "images/entities/zombie_shelter_ai.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "공용실을 임시 침상으로 바꾼다",
+      "resultText": "규정을 고칠 동안 주민들이 자신의 공간을 조금씩 내줬다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_rescued",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_shelter_ai_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "계산식의 안전 여유를 지킨다",
+      "resultText": "안쪽은 안정됐지만 문밖을 지켜보는 감시 시간이 길어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「정확한 배분」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "zombie_shelter_ai_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

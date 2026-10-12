@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_ending_ruin",
+  "worldIds": [
+    "hunter"
+  ],
+  "title": "종료된 공략",
+  "description": "과도한 위험과 미뤄 둔 대가가 마지막 방에서 겹쳤다. 실패 기록은 다음 도전자가 같은 경고를 무시하지 않게 했다.",
+  "image": "images/endings/hunter_ruin.svg",
+  "priority": 100,
+  "isDefault": false,
+  "conditions": {
+    "any": [
+      {
+        "type": "stat",
+        "key": "survival",
+        "operator": "lte",
+        "value": 20
+      },
+      {
+        "all": [
+          {
+            "type": "flag",
+            "key": "hunter_breach",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "type": "stat",
+            "key": "chaos",
+            "operator": "gte",
+            "value": 80
+          }
+        ]
+      }
+    ]
+  }
+}

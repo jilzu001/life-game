@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_15",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "너무 정확한 추천",
+  "description": "추천 목록이 당신의 지난 선택만 보고 다음 선택도 정했다. 편리하지만 낯선 항목은 모두 사라졌다.",
+  "image": "images/events/universal_storm.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "일부러 모르는 항목을 살핀다",
+      "resultText": "잘 맞는 길 옆에 새로 배울 길이 있다는 걸 알았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "익숙한 선택으로 힘을 아낀다",
+      "resultText": "오늘의 부담을 줄여 다음번에 시도할 여유를 남겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

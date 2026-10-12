@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "space_ending_upheaval",
+  "worldIds": [
+    "space"
+  ],
+  "title": "중심 없는 별자리",
+  "description": "항로와 자원의 독점이 풀렸다. 누가 중심인지보다 서로의 궤도를 어떻게 지킬지가 새로운 질서가 됐다.",
+  "image": "images/endings/space_upheaval.svg",
+  "priority": 80,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "space_reform",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "stat",
+        "key": "freedom",
+        "operator": "gte",
+        "value": 60
+      },
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 45
+      }
+    ]
+  }
+}

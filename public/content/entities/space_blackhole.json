@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "space_blackhole",
+  "worldId": "space",
+  "name": "작은 블랙홀",
+  "description": "모든 것을 삼킬 수 있다는 평가를 받지만 아직 무엇을 남길지 결정하지 않았다.",
+  "entityType": "celestial",
+  "image": "images/entities/space_blackhole.svg",
+  "weight": 50,
+  "timeUnit": "강착 주기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "space_blackhole_place_0",
+      "name": "죽은 별의 자리",
+      "description": "죽은 별의 자리에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "space_blackhole_place_1",
+      "name": "실험 중력장",
+      "description": "실험 중력장에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "space_blackhole_trait_0",
+      "name": "섬세한 중력",
+      "description": "섬세한 중력 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "space_blackhole_trait_1",
+      "name": "기억 잔광",
+      "description": "기억 잔광 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "space_blackhole_flaw_0",
+      "name": "끝없는 허기",
+      "description": "끝없는 허기 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "space_blackhole_flaw_1",
+      "name": "불안정한 경계",
+      "description": "불안정한 경계 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "space_blackhole_fate_0",
+      "name": "빛의 반환",
+      "description": "빛의 반환. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_fate_0",
+        "space_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "space_blackhole_fate_1",
+      "name": "항로의 중심",
+      "description": "항로의 중심. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "space_blackhole_fate_1",
+        "space_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 70,
+    "influence": 60,
+    "intelligence": 45,
+    "freedom": 20,
+    "chaos": 60
+  },
+  "tags": [
+    "celestial",
+    "blackhole"
+  ]
+}

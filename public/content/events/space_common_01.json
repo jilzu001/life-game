@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_01",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "수신자 없는 첫 인사",
+  "description": "수십 년 전 발신된 인사말이 당신의 위치에 도착한다. 답장을 보내도 원래 보낸 존재가 아직 있을지는 모른다.",
+  "image": "images/events/space_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "답장을 보낸다",
+      "resultText": "침묵에 작은 약속을 보탰다. 근처 중계기가 다음 신호를 기다렸다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "space_promise",
+          "value": true
+        }
+      ],
+      "branches": [],
+      "nextEventId": "space_common_02"
+    },
+    {
+      "id": "b",
+      "text": "신호를 관측 기록으로 남긴다",
+      "resultText": "성급하게 위치를 드러내지 않고 오래된 좌표를 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "space_signal"
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

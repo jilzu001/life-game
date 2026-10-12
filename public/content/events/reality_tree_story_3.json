@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_tree_story_3",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_tree"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "옮겨 심는 날",
+  "description": "도로 확장으로 자리를 비워야 한다. 뿌리를 지키며 옮기려면 동네의 손길이 필요하다.",
+  "image": "images/entities/reality_tree.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "새 공원의 큰 흙칸에 뿌리내린다",
+      "resultText": "좁은 보도에서 시작한 삶이 여러 사람의 쉼터로 이어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_tree_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "옛 자리의 표식을 남긴다",
+      "resultText": "옮겨 간 뒤에도 그늘 아래의 기억을 찾을 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "작은 흙칸의 여름에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "reality_tree_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

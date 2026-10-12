@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_01",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "이름표를 달아 주는 날",
+  "description": "동네 정비 사업이 시작되자 살아 있는 것과 물건에 번호표가 붙는다. 오래 불리던 별명은 어느 서류에도 없다.",
+  "image": "images/events/reality_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "주변이 부르던 이름을 남긴다",
+      "resultText": "번호 옆의 작은 이름 덕분에 누군가가 다시 찾아올 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_promise",
+          "value": true
+        }
+      ],
+      "branches": [],
+      "nextEventId": "reality_common_02"
+    },
+    {
+      "id": "b",
+      "text": "조용히 눈에 띄지 않는 곳을 택한다",
+      "resultText": "관심을 피한 만큼 스스로 버틸 여유가 필요했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

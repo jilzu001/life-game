@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_08",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "국경선 위의 식탁",
+  "description": "인간과 감염체의 대표가 식탁 양쪽에 앉는다. 어느 쪽도 먹을 수 없는 요리만 준비해 버렸다.",
+  "image": "images/events/zombie_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "음식 대신 공간을 나누는 협정을 맺는다",
+      "resultText": "함께 먹지는 못해도 서로 지나갈 수 있는 길이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "협상을 깨고 비상 물자를 챙긴다",
+      "resultText": "식탁은 넘어졌고 잠깐의 풍요 뒤에 더 높은 장벽이 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "버려질 운명 대신 이어 갈 관계를 찾는다",
+      "resultText": "끝내 남겨진 존재들이 서로의 다음 자리를 마련했다.",
+      "conditions": {
+        "type": "flag",
+        "key": "zombie_fate_1",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

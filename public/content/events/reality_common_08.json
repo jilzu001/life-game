@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_08",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "작은 민원의 긴 회의",
+  "description": "불편을 겪는 쪽은 말할 자리에 없고 대신 말하는 사람들만 많다. 회의는 같은 문장을 반복한다.",
+  "image": "images/events/reality_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "직접 본 흔적과 경험을 전달한다",
+      "resultText": "크다고 할 수 없는 문제가 마침내 구체적인 약속이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "불편을 참다가 한꺼번에 표출한다",
+      "resultText": "관심은 끌었지만 다음 대화를 이어갈 힘이 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "이어 온 관계를 다른 방식으로 돌본다",
+      "resultText": "처음 기대와 달라도 함께 보낸 시간은 다음 약속의 바탕이 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "reality_fate_1",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

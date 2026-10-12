@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_auction",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "경매에 오른 자아",
+  "description": "경매인은 몸값과 자아의 가격을 따로 부른다. 자아만 팔면 몸은 무료 배송이라고 덧붙인다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "type": "choice",
+    "eventId": "fantasy_first_voice",
+    "choiceId": "threaten",
+    "operator": "equals",
+    "value": true
+  },
+  "choices": [
+    {
+      "id": "deal",
+      "text": "중개인의 후원을 받는다",
+      "resultText": "후원금의 이자는 혼돈으로 계산된다. 영수증이 혼자 웃었다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "broker_deal",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 20
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "escape",
+      "text": "경매장을 빠져나간다",
+      "resultText": "당신을 담던 상자만 낙찰됐다. 자유에는 포장비가 붙지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "nextEventId": "fantasy_market"
+}

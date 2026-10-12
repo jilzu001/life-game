@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_mascot_story_2",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_mascot"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "귀여움의 초과 근무",
+  "description": "회복실에서 쉬는 중에도 홍보 담당자가 촬영 일정을 잡는다. 당신을 좋아하는 팬들은 지친 표정을 알아챈다.",
+  "image": "images/entities/hunter_mascot.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "쉬는 모습을 있는 그대로 알린다",
+      "resultText": "응원에는 기다려 주는 일도 포함된다는 약속이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_mascot_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "촬영을 끝까지 해낸다",
+      "resultText": "인기는 올랐지만 다음 냄새를 추적할 힘이 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -18
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「귀여움 노동」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "hunter_mascot_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

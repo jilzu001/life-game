@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_09",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "작은 빛의 예약",
+  "description": "한 세기 뒤 도착할 후발대가 정박지를 예약했다. 지금 편하게 쓰면 그들이 도착할 자원이 남지 않는다.",
+  "image": "images/events/space_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "아직 오지 않은 이들의 몫을 남긴다",
+      "resultText": "보이지 않는 약속이 먼 여행의 끝을 받쳐 주었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "space_promise",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "오늘의 위기를 먼저 해결한다",
+      "resultText": "현재를 버텼지만 다음 세대에 줄 설명도 함께 남겨야 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

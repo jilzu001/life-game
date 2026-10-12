@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_10",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "도시의 새 이름",
+  "description": "재건 지도에는 옛 지명을 지우라는 지시가 내려왔다. 살아남은 이들은 그 이름으로 서로를 찾아왔다.",
+  "image": "images/events/zombie_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "옛 이름과 새 이름을 함께 쓴다",
+      "resultText": "길을 찾는 이와 새로 온 이가 같은 지도를 쓰게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "지도 배포를 독점한다",
+      "resultText": "당신을 거쳐야 이동할 수 있게 되자 질서와 원망이 함께 쌓였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

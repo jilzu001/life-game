@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_vending_story_1",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_vending"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "잔돈으로 쓴 편지",
+  "description": "늘 같은 시간에 오던 승객이 동전 대신 짧은 메모를 넣는다. 오늘은 음료를 살 돈보다 말을 걸 곳이 필요하다고 한다.",
+  "image": "images/entities/cyberpunk_vending.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "따뜻한 캔 하나를 내준다",
+      "resultText": "작은 빚 대신 돌아올 인사가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_vending_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "메모를 보관하고 내일 기다린다",
+      "resultText": "팔지 못한 한 캔이 누군가를 기다리는 표시가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「잔돈 예측」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "cyberpunk_vending_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

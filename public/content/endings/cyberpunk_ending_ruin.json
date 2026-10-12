@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_ending_ruin",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "title": "복구되지 않는 기록",
+  "description": "급하게 쌓은 권한과 무리한 확장이 기반을 무너뜨렸다. 남은 로그에는 경고를 미뤄 둔 시간이 선명했다.",
+  "image": "images/endings/cyberpunk_ruin.svg",
+  "priority": 100,
+  "isDefault": false,
+  "conditions": {
+    "any": [
+      {
+        "type": "stat",
+        "key": "survival",
+        "operator": "lte",
+        "value": 20
+      },
+      {
+        "all": [
+          {
+            "type": "flag",
+            "key": "cyberpunk_breach",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "type": "stat",
+            "key": "chaos",
+            "operator": "gte",
+            "value": 80
+          }
+        ]
+      }
+    ]
+  }
+}

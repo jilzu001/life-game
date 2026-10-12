@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_adventurer_story_2",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_adventurer"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "짐꾼 없는 원정대",
+  "description": "동료들이 보물을 나누다가 부상자를 누가 데려갈지는 정하지 않았다는 걸 깨닫는다. 배낭과 들것을 모두 들 수는 없다.",
+  "image": "images/entities/adventurer.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "보물을 내려놓고 들것을 든다",
+      "resultText": "빈손으로 돌아왔지만 함께 돌아온 동료가 이름을 기억했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "oath",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_adventurer_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "길드 구조대를 부른다",
+      "resultText": "수수료를 지불하고 모두 귀환했다. 원정 계약을 읽는 버릇이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -8
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「약한 체력」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "fragile"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

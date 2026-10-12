@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_ending_legend",
+  "worldIds": [
+    "hunter"
+  ],
+  "title": "등급표가 담지 못한 전설",
+  "description": "평가 숫자보다 먼저 당신의 약속이 알려졌다. 강한 존재뿐 아니라 돌아온 존재들의 기록에 이름이 남았다.",
+  "image": "images/endings/hunter_legend.svg",
+  "priority": 60,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "hunter_promise",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 65
+      }
+    ]
+  }
+}

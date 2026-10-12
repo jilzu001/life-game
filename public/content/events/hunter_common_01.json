@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_01",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "각성 번호표",
+  "description": "게이트 관리소의 번호표 기계가 당신에게도 번호를 발급했다. 접수 창구는 인간용 양식밖에 없다며 다음 사람을 부른다.",
+  "image": "images/events/hunter_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "측정 결과보다 의사를 먼저 적는다",
+      "resultText": "서류 가장자리에 당신의 요청이 남았다. 담당자가 다른 창구를 찾아 나섰다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        }
+      ],
+      "branches": [],
+      "nextEventId": "hunter_common_02"
+    },
+    {
+      "id": "b",
+      "text": "등록을 미루고 현장으로 간다",
+      "resultText": "등급 없이 움직일 자유와 지원 없이 버틸 책임을 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

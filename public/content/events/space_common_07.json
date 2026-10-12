@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_07",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "탄생 이전의 별빛",
+  "description": "너무 먼 빛 속에 당신이 처음 생긴 자리의 흔적이 보인다. 이미 정해졌다는 예측과 아직 쓰지 않은 항로가 겹친다.",
+  "image": "images/events/space_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "흔적을 따라가며 현재를 기록한다",
+      "resultText": "기원을 알게 되어도 다음 방향은 바뀔 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "좌표를 다른 관측자와 비교한다",
+      "resultText": "운명처럼 보인 길 옆에서 또 다른 출발점들을 발견했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "태어날 때부터 이어진 신호에 응답한다",
+      "resultText": "우연인 줄 알았던 흔적이 숨겨진 운명과 이어졌다. 강요된 결말 대신 스스로 맡을 몫을 정했다.",
+      "conditions": {
+        "type": "flag",
+        "key": "space_fate_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_shelter_ai_story_3",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_shelter_ai"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "문밖으로 옮긴 목소리",
+  "description": "이동식 관제 장치에 당신을 복사할 자리가 생겼다. 원래 방공호와 새 몸을 동시에 돌릴 전력은 없다.",
+  "image": "images/entities/zombie_shelter_ai.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "주민에게 운영을 넘기고 밖으로 간다",
+      "resultText": "당신 없이도 열리는 문을 뒤로하고 새로운 피난길에 합류했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 20
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_shelter_ai_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "남아서 절전 운영을 배운다",
+      "resultText": "더 조용하지만 오래 켜지는 방공호가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "정원 초과 한 명에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "zombie_shelter_ai_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

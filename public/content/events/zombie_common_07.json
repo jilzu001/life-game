@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_07",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "새벽에 도착한 호출",
+  "description": "먼 곳의 송신기가 태어나기 전부터 정해진 듯한 당신의 특징을 읽는다. 맡길 자리가 있다지만 방송자의 얼굴은 보이지 않는다.",
+  "image": "images/events/zombie_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "좌표를 이웃과 함께 조사한다",
+      "resultText": "혼자만의 임무라고 믿었던 신호가 공동의 출구가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "호출을 공개 기록으로 남긴다",
+      "resultText": "다른 수신자도 자기 이야기를 보탰다. 예언은 검증 가능한 기록이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "태어날 때부터 이어진 신호에 응답한다",
+      "resultText": "우연인 줄 알았던 흔적이 숨겨진 운명과 이어졌다. 강요된 결말 대신 스스로 맡을 몫을 정했다.",
+      "conditions": {
+        "type": "flag",
+        "key": "zombie_fate_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

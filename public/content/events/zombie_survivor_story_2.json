@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_survivor_story_2",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_survivor"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "낯익은 배급 서명",
+  "description": "배급 장부에서 연락이 끊긴 가족의 서명을 발견한다. 출발하면 맡은 경비 자리에 빈틈이 생긴다.",
+  "image": "images/entities/zombie_survivor.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "교대자를 구한 뒤 찾아간다",
+      "resultText": "가족의 흔적도 공동체의 약속도 놓치지 않으려 시간이 더 들었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_survivor_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "곧바로 흔적을 쫓는다",
+      "resultText": "서명이 남은 곳에 도착했지만 빈 자리를 메운 사람에게 빚을 졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「만성 피로」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "zombie_survivor_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

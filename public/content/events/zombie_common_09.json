@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_09",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "마지막 열차의 무게",
+  "description": "출발 직전 열차의 하중 경보가 켜졌다. 누군가를 버리기 전에 버려도 되는 물건이 있는지 살펴야 한다.",
+  "image": "images/events/zombie_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "소유권을 내려놓고 짐을 정리한다",
+      "resultText": "좌석 아래의 불필요한 짐만으로 자리가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기관을 무리하게 가동한다",
+      "resultText": "열차는 움직였지만 돌아올 부품을 남기지 못했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -18
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 18
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

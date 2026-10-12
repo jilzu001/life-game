@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_11",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "마지막 방의 비상구",
+  "description": "보스 방에 비상구가 없다는 사실이 뒤늦게 알려진다. 결투를 끝내야만 나갈 수 있다는 규칙에 모두 지쳐 있다.",
+  "image": "images/events/hunter_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "중단과 재협상 절차를 만든다",
+      "resultText": "도망과 항복 사이에 스스로 멈출 선택지가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "결투를 서둘러 끝낸다",
+      "resultText": "출구는 열렸지만 무리한 마지막 동작의 대가가 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -18
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

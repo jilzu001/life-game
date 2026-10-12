@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_01",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "분실물에 등록된 미래",
+  "description": "분실물 목록에 아직 잃어버리지 않은 당신의 물건이 적혀 있다. 글쓴이는 날짜를 잘못 적었다고 둘러댄다.",
+  "image": "images/events/universal_signal.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "기록을 비교해 주인을 찾는다",
+      "resultText": "이상한 예고보다 실수한 기록이 먼저 바로잡혔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "odd_receipt"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "예고를 믿고 행동을 바꾼다",
+      "resultText": "같은 실수는 피했지만 다른 낯선 길을 택하게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

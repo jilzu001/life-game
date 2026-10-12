@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_01",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "무료 체험의 마지막 날",
+  "description": "도시 안내망이 무료 체험이 끝났다며 당신의 이름 표시를 흐리게 만든다. 결제하지 않아도 존재한다는 걸 설명해야 한다.",
+  "image": "images/events/cyberpunk_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "이웃의 증언으로 등록한다",
+      "resultText": "구독 기록 대신 서로 기억하는 이름이 작은 신원망이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_promise",
+          "value": true
+        }
+      ],
+      "branches": [],
+      "nextEventId": "cyberpunk_common_02"
+    },
+    {
+      "id": "b",
+      "text": "임시 계정을 계속 바꾼다",
+      "resultText": "추적은 피했지만 오늘 만난 사람에게 내일도 같은 이름을 쓸 수 없었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

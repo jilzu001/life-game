@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "contentVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "rng": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "const": "mulberry32-v1"
+        },
+        "state": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        }
+      },
+      "required": [
+        "algorithm",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "birth",
+        "playing",
+        "ended"
+      ]
+    },
+    "worldId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "entityId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "birthEntityId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "birthLocationId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "traitId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "flawId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "hiddenFateId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "hiddenFateRevealed": {
+      "type": "boolean"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "birth",
+        "awakening",
+        "growth",
+        "crisis",
+        "transition",
+        "climax",
+        "conclusion"
+      ]
+    },
+    "currentEventId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "endingId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "survival": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "influence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "intelligence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "freedom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "chaos": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "survival",
+        "influence",
+        "intelligence",
+        "freedom",
+        "chaos"
+      ],
+      "additionalProperties": false
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      }
+    },
+    "flags": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      }
+    },
+    "visitedEventIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      }
+    },
+    "choiceHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "choiceId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "birth",
+              "awakening",
+              "growth",
+              "crisis",
+              "transition",
+              "climax",
+              "conclusion"
+            ]
+          },
+          "entityId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "resultText": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "eventId",
+          "choiceId",
+          "stage",
+          "entityId",
+          "resultText"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "completedEventCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "birthStory": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "contentVersion",
+    "seed",
+    "rng",
+    "status",
+    "worldId",
+    "entityId",
+    "birthEntityId",
+    "birthLocationId",
+    "traitId",
+    "flawId",
+    "hiddenFateId",
+    "hiddenFateRevealed",
+    "stage",
+    "currentEventId",
+    "endingId",
+    "stats",
+    "tags",
+    "flags",
+    "items",
+    "visitedEventIds",
+    "choiceHistory",
+    "completedEventCount",
+    "birthStory"
+  ],
+  "additionalProperties": false
+}

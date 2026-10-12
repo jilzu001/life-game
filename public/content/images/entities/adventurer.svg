@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="망토를 두른 인간 모험가">
+  <rect width="240" height="160" rx="16" fill="#141b2c"/>
+  <circle cx="120" cy="76" r="51" fill="#202d43"/>
+  <path d="M81 143 97 78H143L161 143Z" fill="#60858c"/>
+  <circle cx="120" cy="57" r="22" fill="#d7b990"/>
+  <path d="M94 59Q94 20 120 23Q145 24 147 62L131 41 107 43Z" fill="#364b68"/>
+  <path d="M119 81 103 144M121 81 141 144" stroke="#a8c4c0" stroke-width="3"/>
+  <path d="M172 65V143" stroke="#b69b67" stroke-width="7"/>
+</svg>

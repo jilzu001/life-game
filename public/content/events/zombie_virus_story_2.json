@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_virus_story_2",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_virus"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "이름 붙은 변이",
+  "description": "연구자의 기록에 당신의 계통만 위험 표식 없이 남았다. 다른 계통의 흔적이 기록을 뒤덮으려 한다.",
+  "image": "images/entities/zombie_virus.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "안정된 특징을 유지한다",
+      "resultText": "관찰자는 적이 아닌 협력 가능성을 적기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_virus_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "표식을 지우고 섞인다",
+      "resultText": "관찰망을 벗어났지만 자신을 구분할 흔적도 희미해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「짧은 수명」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "zombie_virus_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

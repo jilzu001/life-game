@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_slime_story_1",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_slime"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "성수 품질 검사",
+  "description": "사제가 당신을 가짜 성수 통에 넣어 달라고 부탁한다. 불순물은 맛있어 보이지만 정화되면 원래 색을 잃을지도 모른다.",
+  "image": "images/entities/fantasy_slime.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "불순물만 골라 삼킨다",
+      "resultText": "맑아진 물과 함께 감사장이 남았다. 몸속에는 작은 은 조각이 반짝인다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addItem",
+          "key": "silver_drop"
+        },
+        {
+          "op": "setFlag",
+          "key": "slime_cleaned",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_slime_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "통째로 발효시킨다",
+      "resultText": "성수가 탄산음료가 됐다. 순례객들은 환호하고 사제는 장부를 다시 썼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「금속 소화」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "fantasy_slime_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_dragon",
+  "worldId": "fantasy",
+  "name": "드래곤",
+  "description": "보물을 모으기 시작하자 동굴보다 장부가 먼저 커진, 오래 살 운명의 날개 달린 존재.",
+  "entityType": "creature",
+  "image": "images/entities/fantasy_dragon.svg",
+  "weight": 50,
+  "timeUnit": "탈피",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "fantasy_dragon_place_0",
+      "name": "휴화산 둥지",
+      "description": "휴화산 둥지에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_place_0",
+        "royal_property"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "fantasy_dragon_place_1",
+      "name": "왕립 부화장",
+      "description": "왕립 부화장에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_place_1",
+        "ancient_origin"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "fantasy_dragon_trait_0",
+      "name": "불꽃 조율",
+      "description": "불꽃 조율 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "fantasy_dragon_trait_1",
+      "name": "보물 감별",
+      "description": "보물 감별 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "fantasy_dragon_flaw_0",
+      "name": "날개 흉터",
+      "description": "날개 흉터 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "fantasy_dragon_flaw_1",
+      "name": "보물 집착",
+      "description": "보물 집착 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "fantasy_dragon_fate_0",
+      "name": "사라진 계절",
+      "description": "사라진 계절. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_fate_0",
+        "fantasy_fate_0",
+        "fate_crown_witness"
+      ],
+      "effects": [],
+      "conditions": {
+        "type": "flag",
+        "key": "royal_property",
+        "operator": "equals",
+        "value": true
+      }
+    },
+    {
+      "id": "fantasy_dragon_fate_1",
+      "name": "왕국의 채무",
+      "description": "왕국의 채무. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "fantasy_dragon_fate_1",
+        "fantasy_fate_1",
+        "fate_sealed_gate_key"
+      ],
+      "effects": [],
+      "conditions": {
+        "type": "flag",
+        "key": "ancient_origin",
+        "operator": "equals",
+        "value": true
+      }
+    }
+  ],
+  "initialStats": {
+    "survival": 80,
+    "influence": 45,
+    "intelligence": 50,
+    "freedom": 55,
+    "chaos": 35
+  },
+  "tags": [
+    "creature",
+    "dragon"
+  ]
+}

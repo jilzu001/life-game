@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_06",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "구조 신호의 메아리",
+  "description": "정체불명의 구조 신호가 여러 방향에서 동시에 들린다. 실제 발신자는 하나인데 오래된 중계망이 신호를 되돌리고 있다.",
+  "image": "images/events/space_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "도착 시간 차이를 비교한다",
+      "resultText": "가장 가까운 생존 신호를 구분했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "가장 큰 신호를 따라간다",
+      "resultText": "빠르게 움직였지만 빈 중계기를 만날 위험도 떠안았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

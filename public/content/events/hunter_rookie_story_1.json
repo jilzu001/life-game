@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_rookie_story_1",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_rookie"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "F급 전용 입구",
+  "description": "낮은 등급의 헌터는 짐 운반 통로로 들어가라는 표지판이 있다. 정문보다 이쪽 함정의 위치가 더 잘 보인다.",
+  "image": "images/entities/hunter_rookie.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "발견한 위험을 모두에게 알린다",
+      "resultText": "등급과 다른 관찰력이 첫 공략의 방향을 바꿨다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_rookie_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "혼자 안전한 길을 확보한다",
+      "resultText": "스스로는 덜 다쳤지만 함께 갈 기회는 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「함정 감지」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "hunter_rookie_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

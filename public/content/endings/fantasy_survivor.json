@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "worldIds": [
+    "fantasy"
+  ],
+  "image": "images/endings/fantasy_survivor.svg",
+  "id": "fantasy_survivor",
+  "title": "이름을 지킨 생",
+  "description": "크고 작은 사건이 지나간 뒤에도 당신의 이야기는 남았다. 세상이 기억하지 않아도 당신은 무엇을 선택했는지 안다.",
+  "priority": 0,
+  "isDefault": true
+}

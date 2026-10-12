@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_fate",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "태어나기 전에 남긴 편지",
+  "description": "당신의 기원을 기록한 편지가 도착했다. 보낸 사람은 아직 태어나지 않은 당신 자신이다. 이제 숨겨진 운명을 읽을 수 있다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "fate_seen",
+        "operator": "equals",
+        "value": false
+      },
+      {
+        "any": [
+          {
+            "type": "flag",
+            "key": "fate_crown_witness",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "type": "flag",
+            "key": "fate_sealed_gate_key",
+            "operator": "equals",
+            "value": true
+          }
+        ]
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "embrace",
+      "text": "증언을 세상에 남긴다",
+      "resultText": "운명을 받아들이되 그 결말은 직접 쓰기로 했다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "embrace_fate",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fate_seen",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        }
+      ],
+      "branches": [
+        {
+          "conditions": {
+            "type": "entity",
+            "operator": "equals",
+            "value": "fantasy_sword"
+          },
+          "nextEventId": "fantasy_new_body"
+        },
+        {
+          "conditions": {
+            "type": "entity",
+            "operator": "equals",
+            "value": "fantasy_adventurer"
+          },
+          "nextEventId": "fantasy_old_oath"
+        }
+      ]
+    },
+    {
+      "id": "reject",
+      "text": "누군가의 도구가 되기를 거절한다",
+      "resultText": "편지는 찢었지만 읽은 내용은 사라지지 않았다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "reject_fate",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fate_seen",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 20
+        }
+      ],
+      "branches": [],
+      "nextEventId": "fantasy_old_oath"
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_cat_story_3",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_cat"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "이름 적힌 이동장",
+  "description": "돌보던 사람이 이사를 준비하며 이동장을 열어 놓았다. 익숙한 골목과 함께 지낼 사람 사이에서 냄새를 맡는다.",
+  "image": "images/entities/reality_cat.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "새 집으로 함께 간다",
+      "resultText": "낯선 창문에서 시작하는 두 번째 집을 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_cat_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "골목의 다른 돌봄을 택한다",
+      "resultText": "여러 이웃이 함께 안부를 확인하기로 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "두 집의 밥그릇에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "reality_cat_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

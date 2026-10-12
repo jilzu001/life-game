@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_07",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "완료되지 않은 개인 임무",
+  "description": "처음 각성할 때 받은 빈 임무창에 이제 글자가 나타난다. 높은 등급보다 당신의 지난 선택을 조건으로 삼고 있다.",
+  "image": "images/events/hunter_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "임무의 이유부터 확인한다",
+      "resultText": "숨겨진 운명을 알게 됐지만 수행할 방식은 직접 정할 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "임무창을 동료와 함께 읽는다",
+      "resultText": "혼자만의 비밀이던 안내에 다른 해석이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "태어날 때부터 이어진 신호에 응답한다",
+      "resultText": "우연인 줄 알았던 흔적이 숨겨진 운명과 이어졌다. 강요된 결말 대신 스스로 맡을 몫을 정했다.",
+      "conditions": {
+        "type": "flag",
+        "key": "hunter_fate_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

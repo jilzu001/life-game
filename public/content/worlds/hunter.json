@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter",
+  "name": "현대 헌터물",
+  "description": "게이트가 일상이 된 도시에서 등급표 밖의 존재들이 자기 역할을 찾아간다.",
+  "image": "images/worlds/hunter.svg",
+  "weight": 100,
+  "entityIds": [
+    "hunter_rookie",
+    "hunter_boss",
+    "hunter_mana_stone",
+    "hunter_mascot",
+    "hunter_admin"
+  ]
+}

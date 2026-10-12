@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_05",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "길을 묻는 안내 표지",
+  "description": "안내를 하던 장치가 자기 위치를 모른다며 도움을 구한다. 누군가 옮겨 놓은 뒤 화살표만 그대로 남았다.",
+  "image": "images/events/universal_signal.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "주변과 비교해 방향을 고친다",
+      "resultText": "모르는 길을 아는 척하지 않는 표지가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "fixed_sign",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "모른다는 표시를 붙인다",
+      "resultText": "당장의 답은 없어도 더 많은 존재가 길을 잃지는 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

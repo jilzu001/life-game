@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_owner_lost",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_sword"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "당신을 들던 손이 사라졌다",
+  "description": "동행이 끊어진 순간 당신은 바닥에 남았다. 주인이 있어야 움직일 수 있다는 결함이 처음으로 문장이 아닌 현실이 된다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "crisis_started",
+        "operator": "equals",
+        "value": false
+      },
+      {
+        "type": "flag",
+        "key": "needs_owner",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "signal",
+      "text": "도움을 청하는 소리를 낸다",
+      "resultText": "누군가 돌아왔다. 손을 빌리는 것과 뜻을 맡기는 것은 다르다는 걸 배웠다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "crisis_started",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "strain",
+      "text": "스스로 움직이려 몸을 비튼다",
+      "resultText": "칼날이 깨졌지만 아주 조금 움직였다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "crisis_started",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -20
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 20
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

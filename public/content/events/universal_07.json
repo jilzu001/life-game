@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_07",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "한 번도 안 쓴 사과문",
+  "description": "공용 서랍에서 누구에게나 쓸 수 있는 사과문이 발견된다. 이름만 바꾸면 된다는 설명이 붙어 있다.",
+  "image": "images/events/universal_storm.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "구체적으로 무엇을 고칠지 쓴다",
+      "resultText": "짧아진 문장 뒤에 바뀐 행동 하나가 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "specific_apology",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "서식을 남기고 사용은 미룬다",
+      "resultText": "급한 말을 삼키고 사정을 더 살펴볼 시간이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

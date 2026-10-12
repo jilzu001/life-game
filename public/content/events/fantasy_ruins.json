@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_ruins",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "열쇠 구멍 없는 문",
+  "description": "유적의 문은 당신을 보자 오랫동안 참은 재채기를 한다. 열쇠가 돌아오면 먼저 환기부터 해야 한다는 설계였던 모양이다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "ancient_origin",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "trail_read",
+        "operator": "equals",
+        "value": false
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "decode",
+      "text": "문의 문자를 해독한다",
+      "resultText": "잊힌 기술이 머릿속에 남았다. 당신의 기원은 평범한 우연이 아니다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "trail_read",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 15
+        },
+        {
+          "op": "addItem",
+          "key": "ancient_map"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "open",
+      "text": "문이 원한 바깥 공기를 들여보낸다",
+      "resultText": "봉인의 일부가 풀렸다. 문 너머에서 바람보다 먼저 소문이 나왔다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "trail_read",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "nextEventId": "fantasy_workshop"
+}

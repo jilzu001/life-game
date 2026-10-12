@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_03",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "유통 기한 선거",
+  "description": "창고 물자를 배분할 대표를 뽑는데 후보 자격이 가장 오래 버틸 수 있는 존재다. 누구나 자기 기한을 조금씩 늘려 말한다.",
+  "image": "images/events/zombie_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "실제 상태를 공개한다",
+      "resultText": "조금 남은 자원도 공정하게 나누자는 서약이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_promise",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "창고를 먼저 확보한다",
+      "resultText": "물자는 얻었지만 다음 배급 때 당신을 향한 시선이 차가워졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 12
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

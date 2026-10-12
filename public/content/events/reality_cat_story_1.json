@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_cat_story_1",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_cat"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "두 집의 밥그릇",
+  "description": "서로 모르는 두 사람이 당신을 돌보고 있다. 양쪽에서 먹다 보니 배는 부르지만 기다리는 시간도 겹친다.",
+  "image": "images/entities/reality_cat.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "두 사람을 같은 자리로 이끈다",
+      "resultText": "돌봄을 나누는 연락처가 생겼다. 밥 시간도 편해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_cat_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "조용히 익숙한 한 곳을 고른다",
+      "resultText": "매일 돌아갈 자리가 분명해졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「정확한 착지」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "reality_cat_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

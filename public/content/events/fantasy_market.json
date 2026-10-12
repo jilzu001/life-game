@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_market",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "기억을 받는 노점",
+  "description": "노점상은 돈 대신 기억을 받는다. 경매장에 다녀온 손님에게는 영수증을 잊는 서비스까지 제공한다고 한다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "trail_read",
+        "operator": "equals",
+        "value": false
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "trade",
+      "text": "사소한 기억으로 지도를 산다",
+      "resultText": "어제의 날씨를 잊고 오래된 공방의 위치를 얻었다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "trail_read",
+          "value": true
+        },
+        {
+          "op": "addItem",
+          "key": "ancient_map"
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "refuse",
+      "text": "기억을 지키고 길을 묻는다",
+      "resultText": "노점상은 투덜거리면서도 공방 방향을 가리켰다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "trail_read",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "nextEventId": "fantasy_workshop"
+}

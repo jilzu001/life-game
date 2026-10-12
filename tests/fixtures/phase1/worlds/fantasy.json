@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy",
+  "name": "중세 판타지",
+  "description": "검과 마법이 살아 숨 쉬고, 때로는 검이 주인보다 말이 많은 세계.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 100,
+  "entityIds": ["fantasy_sword"]
+}

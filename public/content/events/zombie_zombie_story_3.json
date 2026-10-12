@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_zombie_story_3",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_zombie"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "면회실의 거울",
+  "description": "면회 온 사람이 거울을 들고 옛 별명을 부른다. 기억과 지금의 몸 중 어느 쪽을 이름으로 삼을지 묻는다.",
+  "image": "images/entities/zombie_zombie.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "기억을 이어 인간으로 돌아갈 길을 택한다",
+      "resultText": "오랜 돌봄 끝에 몸이 회복됐다. 무리 속에서 배운 손짓은 잊지 않았다.",
+      "effects": [
+        {
+          "op": "transformEntity",
+          "entityId": "zombie_survivor"
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_reversal",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_zombie_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "지금의 이름으로 답한다",
+      "resultText": "돌아가지 않아도 관계를 이어갈 수 있었다. 면회실에 낮은 의자가 놓였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "생전의 출근 카드에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "zombie_zombie_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

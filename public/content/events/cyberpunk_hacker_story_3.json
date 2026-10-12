@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_hacker_story_3",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_hacker"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "이름 없는 계정의 열쇠",
+  "description": "오래 도운 익명 계정이 사실 동네 공공망이었다. 운영을 맡아 달라며 단독 관리자 권한을 보낸다.",
+  "image": "images/entities/cyberpunk_hacker.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "주민들과 권한을 나눠 가진다",
+      "resultText": "숨었던 해커가 공동망의 관리자로 이름을 남겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_hacker_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "익명 조력자로 남는다",
+      "resultText": "하나의 자리에 묶이지 않고 필요한 때마다 연결을 도왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "지워진 출석부에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "cyberpunk_hacker_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

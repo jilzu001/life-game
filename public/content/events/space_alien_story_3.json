@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "space_alien_story_3",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_alien"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "고향에서 보낸 오역",
+  "description": "고향의 오래된 답장은 돌아오라는 뜻과 머물라는 뜻을 동시에 담고 있다. 번역기는 둘 중 하나를 지우라고 권한다.",
+  "image": "images/entities/space_alien.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "두 의미를 함께 안고 새 집을 정한다",
+      "resultText": "떠나온 곳과 머물 곳을 동시에 고향이라 불렀다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_alien_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "답장을 기다리며 관측을 계속한다",
+      "resultText": "결정을 서두르지 않는 동안 다른 여행자의 언어를 배웠다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "인사가 경보로 번역됐다에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "space_alien_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

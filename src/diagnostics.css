@@ -1,0 +1,18 @@
+:root { font-family: system-ui, sans-serif; color: #e7e8ec; background: #121723; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 780px; padding: 24px; margin: auto; }
+h1 { font-size: 1.5rem; }
+p { line-height: 1.7; color: #c0c6d3; }
+form { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 24px 0; }
+label { display: grid; gap: 8px; }
+input, button { padding: 12px; border: 1px solid #727e94; border-radius: 6px; font: inherit; min-height: 44px; }
+button { cursor: pointer; background: #344361; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: #1c2535; border-radius: 8px; line-height: 1.7; }
+img { max-width: 100%; }
+[role="alert"] { color: #ffb4ac; }
+.choices { display: grid; gap: 10px; }
+.choices button { text-align: left; }
+button:disabled { cursor: default; opacity: .5; }
+[hidden] { display: none !important; }
+li { line-height: 1.7; margin-bottom: 10px; }

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_ending_ruin",
+  "worldIds": [
+    "zombie"
+  ],
+  "title": "멎어 버린 신호",
+  "description": "서둘러 얻은 것보다 잃은 연결이 많았다. 마지막 신호 뒤에는 누구도 혼자 오래 버틸 수 없었다는 기록이 남았다.",
+  "image": "images/endings/zombie_ruin.svg",
+  "priority": 100,
+  "isDefault": false,
+  "conditions": {
+    "any": [
+      {
+        "type": "stat",
+        "key": "survival",
+        "operator": "lte",
+        "value": 20
+      },
+      {
+        "all": [
+          {
+            "type": "flag",
+            "key": "zombie_breach",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "type": "stat",
+            "key": "chaos",
+            "operator": "gte",
+            "value": 80
+          }
+        ]
+      }
+    ]
+  }
+}

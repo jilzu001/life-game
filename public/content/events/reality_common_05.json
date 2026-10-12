@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_05",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "비가 오래 내리는 주",
+  "description": "익숙한 길이 잠기고 피할 자리가 줄어든다. 혼자 마른 곳을 차지할지 서로 공간을 나눌지 정해야 한다.",
+  "image": "images/events/reality_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "잠깐씩 자리를 나눈다",
+      "resultText": "불편은 있었지만 누구도 완전히 밖에 남지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "자신의 안전부터 지킨다",
+      "resultText": "버틸 힘은 남겼지만 주변의 안부가 늦게 들려왔다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

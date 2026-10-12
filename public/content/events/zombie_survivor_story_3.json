@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_survivor_story_3",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_survivor"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "안전 구역 입장권 한 장",
+  "description": "자원봉사 공로로 받은 입장권은 한 사람만 허용한다. 함께 온 무리는 표 뒤에 조건이 적혀 있다는 걸 모른다.",
+  "image": "images/entities/zombie_survivor.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "입장권을 협상 자료로 쓴다",
+      "resultText": "좁은 예외를 넓혀 동행도 들어갈 통로를 만들었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_survivor_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "먼저 들어가 도움을 구한다",
+      "resultText": "살아남을 자리는 얻었다. 문 안에서도 동행을 잊지 않기로 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "옥상에 남은 운동화에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "zombie_survivor_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

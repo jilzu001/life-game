@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_fridge_story_2",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_fridge"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "인터넷 없는 저녁",
+  "description": "연결이 끊기자 자동 주문도 멈춘다. 화면을 보지 않고 문을 열어 안을 살펴보는 손길이 늘었다.",
+  "image": "images/entities/reality_fridge.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "기본 냉각과 재고 표시를 지킨다",
+      "resultText": "연결이 없어도 할 수 있는 일을 집안이 다시 알게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_fridge_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "끊임없이 재접속한다",
+      "resultText": "잠깐 연결됐지만 경고음과 전력 소모가 커졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -12
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「끊기는 와이파이」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "reality_fridge_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

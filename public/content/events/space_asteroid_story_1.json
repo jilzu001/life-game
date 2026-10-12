@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "space_asteroid_story_1",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_asteroid"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "광맥의 첫 계약",
+  "description": "채굴선은 당신의 속을 비우면 가벼워져 자유로울 거라고 말한다. 계약서에는 균열이 생겼을 때의 책임이 없다.",
+  "image": "images/entities/space_asteroid.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "채굴 범위와 멈출 조건을 정한다",
+      "resultText": "조금 비워진 자리에 정비소가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        },
+        {
+          "op": "setFlag",
+          "key": "space_asteroid_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "모든 광맥을 내준다",
+      "resultText": "많은 관심을 받았지만 남은 몸이 흔들렸다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -22
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「희귀 광맥」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "space_asteroid_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

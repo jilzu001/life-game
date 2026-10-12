@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_06",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "공사 안내문이 붙었다",
+  "description": "늘 있던 자리가 곧 바뀐다는 안내문이 붙었다. 일정은 적혀 있지만 그곳을 쓰는 이들의 이야기는 없다.",
+  "image": "images/events/reality_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "바뀌면 곤란한 점을 남긴다",
+      "resultText": "작은 동선과 그늘이 설계도에 다시 표시됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "변화에 맞춰 자리를 비운다",
+      "resultText": "갈등은 줄었지만 새로운 환경을 익힐 시간이 필요했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,242 @@
+{
+  "contentVersion": "0.4.0-mvp",
+  "inventory": {
+    "worlds": [
+      {
+        "id": "fantasy",
+        "name": "중세 판타지",
+        "entities": [
+          {
+            "id": "fantasy_sword",
+            "events": 3
+          },
+          {
+            "id": "fantasy_adventurer",
+            "events": 3
+          },
+          {
+            "id": "fantasy_slime",
+            "events": 3
+          },
+          {
+            "id": "fantasy_dragon",
+            "events": 3
+          },
+          {
+            "id": "fantasy_dungeon",
+            "events": 3
+          }
+        ],
+        "common": 17,
+        "dedicated": 15,
+        "endings": 5,
+        "fallback": 1
+      },
+      {
+        "id": "zombie",
+        "name": "좀비 아포칼립스",
+        "entities": [
+          {
+            "id": "zombie_survivor",
+            "events": 3
+          },
+          {
+            "id": "zombie_zombie",
+            "events": 3
+          },
+          {
+            "id": "zombie_virus",
+            "events": 3
+          },
+          {
+            "id": "zombie_shelter_ai",
+            "events": 3
+          },
+          {
+            "id": "zombie_can",
+            "events": 3
+          }
+        ],
+        "common": 12,
+        "dedicated": 15,
+        "endings": 5,
+        "fallback": 1
+      },
+      {
+        "id": "cyberpunk",
+        "name": "사이버펑크",
+        "entities": [
+          {
+            "id": "cyberpunk_hacker",
+            "events": 3
+          },
+          {
+            "id": "cyberpunk_android",
+            "events": 3
+          },
+          {
+            "id": "cyberpunk_vending",
+            "events": 3
+          },
+          {
+            "id": "cyberpunk_server_ai",
+            "events": 3
+          },
+          {
+            "id": "cyberpunk_memory_chip",
+            "events": 3
+          }
+        ],
+        "common": 12,
+        "dedicated": 15,
+        "endings": 5,
+        "fallback": 1
+      },
+      {
+        "id": "space",
+        "name": "우주 SF",
+        "entities": [
+          {
+            "id": "space_alien",
+            "events": 3
+          },
+          {
+            "id": "space_ship",
+            "events": 3
+          },
+          {
+            "id": "space_asteroid",
+            "events": 3
+          },
+          {
+            "id": "space_blackhole",
+            "events": 3
+          },
+          {
+            "id": "space_parasite",
+            "events": 3
+          }
+        ],
+        "common": 12,
+        "dedicated": 15,
+        "endings": 5,
+        "fallback": 1
+      },
+      {
+        "id": "hunter",
+        "name": "현대 헌터물",
+        "entities": [
+          {
+            "id": "hunter_rookie",
+            "events": 3
+          },
+          {
+            "id": "hunter_boss",
+            "events": 3
+          },
+          {
+            "id": "hunter_mana_stone",
+            "events": 3
+          },
+          {
+            "id": "hunter_mascot",
+            "events": 3
+          },
+          {
+            "id": "hunter_admin",
+            "events": 3
+          }
+        ],
+        "common": 12,
+        "dedicated": 15,
+        "endings": 5,
+        "fallback": 1
+      },
+      {
+        "id": "reality",
+        "name": "현실 세계",
+        "entities": [
+          {
+            "id": "reality_human",
+            "events": 3
+          },
+          {
+            "id": "reality_cat",
+            "events": 3
+          },
+          {
+            "id": "reality_tree",
+            "events": 3
+          },
+          {
+            "id": "reality_stone",
+            "events": 3
+          },
+          {
+            "id": "reality_fridge",
+            "events": 3
+          }
+        ],
+        "common": 12,
+        "dedicated": 15,
+        "endings": 5,
+        "fallback": 1
+      }
+    ],
+    "entities": 30,
+    "normalEvents": 185,
+    "universal": 18,
+    "fallbackEvents": 6,
+    "endings": 30
+  },
+  "simulations": [
+    {
+      "worldId": "fantasy",
+      "runs": 16384,
+      "fallbackVisits": 0,
+      "missing": [],
+      "errors": [],
+      "observedCount": 188
+    },
+    {
+      "worldId": "zombie",
+      "runs": 16384,
+      "fallbackVisits": 0,
+      "missing": [],
+      "errors": [],
+      "observedCount": 163
+    },
+    {
+      "worldId": "cyberpunk",
+      "runs": 16384,
+      "fallbackVisits": 0,
+      "missing": [],
+      "errors": [],
+      "observedCount": 163
+    },
+    {
+      "worldId": "space",
+      "runs": 16384,
+      "fallbackVisits": 0,
+      "missing": [],
+      "errors": [],
+      "observedCount": 163
+    },
+    {
+      "worldId": "hunter",
+      "runs": 16384,
+      "fallbackVisits": 0,
+      "missing": [],
+      "errors": [],
+      "observedCount": 163
+    },
+    {
+      "worldId": "reality",
+      "runs": 16384,
+      "fallbackVisits": 0,
+      "missing": [],
+      "errors": [],
+      "observedCount": 163
+    }
+  ]
+}

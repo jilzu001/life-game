@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "space_parasite_story_1",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_parasite"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "선체 청소의 오해",
+  "description": "외벽을 닦던 로봇이 당신까지 제거 대상으로 표시한다. 사실 당신이 붙어 있던 부분만 균열이 적다.",
+  "image": "images/entities/space_parasite.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "보호한 흔적을 보여 준다",
+      "resultText": "밀항자가 아니라 정비를 돕는 동행이라는 기록을 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_parasite_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "더 깊은 틈으로 숨는다",
+      "resultText": "당장은 안전했지만 선체가 흔들릴 때마다 빠져나오기 어려웠다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「진공 휴면」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "space_parasite_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

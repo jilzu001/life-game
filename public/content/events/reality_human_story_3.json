@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_human_story_3",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_human"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "작은 모임의 첫 의자",
+  "description": "오래 생각한 모임을 열 곳이 생겼다. 유명한 사람을 기다리는 대신 늘 보던 이웃부터 부를 수 있다.",
+  "image": "images/entities/reality_human.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "이웃과 정기적인 자리를 만든다",
+      "resultText": "대단한 직함 없이도 누군가의 한 주를 기다리게 만드는 사람이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_human_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "혼자 배우는 시간을 이어 간다",
+      "resultText": "다른 사람의 일정이 아닌 자기 속도를 찾았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "돌아오지 않은 답장에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "reality_human_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

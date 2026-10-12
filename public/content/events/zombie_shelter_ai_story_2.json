@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_shelter_ai_story_2",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [
+    "zombie_shelter_ai"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "관리자 암호의 유언",
+  "description": "마지막 관리자가 남긴 암호 힌트는 첫 반려동물의 이름이다. 주민 중 누군가 알고 있지만 추억을 묻기 어려워한다.",
+  "image": "images/entities/zombie_shelter_ai.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "사연을 듣고 동의를 구한다",
+      "resultText": "암호보다 오래된 신뢰가 연결됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_shelter_ai_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "읽기 전용 상태로 버틴다",
+      "resultText": "명령은 바꿀 수 없지만 오래된 오류를 기록해 둘 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「낡은 배터리」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "zombie_shelter_ai_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

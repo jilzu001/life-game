@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "space_alien",
+  "worldId": "space",
+  "name": "외계 생명체",
+  "description": "말 대신 색으로 기억을 전하고 아직 이름 없는 별에 답장을 기다리는 생명체.",
+  "entityType": "organism",
+  "image": "images/entities/space_alien.svg",
+  "weight": 50,
+  "timeUnit": "공명 주기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "space_alien_place_0",
+      "name": "얼음 위성",
+      "description": "얼음 위성에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "space_alien_place_1",
+      "name": "떠도는 생체선",
+      "description": "떠도는 생체선에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "space_alien_trait_0",
+      "name": "빛의 언어",
+      "description": "빛의 언어 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "space_alien_trait_1",
+      "name": "진동 감각",
+      "description": "진동 감각 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "space_alien_flaw_0",
+      "name": "중력 멀미",
+      "description": "중력 멀미 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "space_alien_flaw_1",
+      "name": "산소 공포",
+      "description": "산소 공포 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "space_alien_fate_0",
+      "name": "첫 인사",
+      "description": "첫 인사. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_fate_0",
+        "space_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "space_alien_fate_1",
+      "name": "고향의 좌표",
+      "description": "고향의 좌표. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "space_alien_fate_1",
+        "space_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 60,
+    "influence": 30,
+    "intelligence": 60,
+    "freedom": 60,
+    "chaos": 40
+  },
+  "tags": [
+    "organism",
+    "alien"
+  ]
+}

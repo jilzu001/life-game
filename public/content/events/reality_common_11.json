@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_11",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "작은 기록을 모으는 사람",
+  "description": "이사 오는 사람이 동네에서 오래된 이야기를 묻는다. 특별한 사건보다 사소한 돌봄이 더 많이 떠오른다.",
+  "image": "images/events/reality_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "사소한 안부까지 남긴다",
+      "resultText": "새로 온 이가 누구에게 인사해야 할지 알게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "지나간 일보다 다음 일을 준비한다",
+      "resultText": "쓸 수 있는 자리를 마련하며 다른 방식으로 환영했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

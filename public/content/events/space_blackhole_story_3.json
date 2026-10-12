@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "id": "space_blackhole_story_3",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_blackhole"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "허기의 다른 쓰임",
+  "description": "고속으로 흩어진 파편이 근처 정거장으로 향한다. 당신이 끌어당기면 더 커지지만 그 무게를 오래 감당해야 한다.",
+  "image": "images/entities/space_blackhole.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "필요한 만큼만 받아 궤도를 고정한다",
+      "resultText": "무서운 구멍 대신 길을 지키는 이정표가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "setFlag",
+          "key": "space_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_blackhole_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "모든 파편을 한꺼번에 삼킨다",
+      "resultText": "정거장은 잠시 안전해졌지만 새 경계가 통제 밖으로 번졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -25
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "space_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "삼키지 않은 편지에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "space_blackhole_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

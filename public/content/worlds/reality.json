@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "reality",
+  "name": "현실 세계",
+  "description": "동네의 사람과 동물과 사물들이 작은 선택으로 서로의 하루를 바꾼다.",
+  "image": "images/worlds/reality.svg",
+  "weight": 100,
+  "entityIds": [
+    "reality_human",
+    "reality_cat",
+    "reality_tree",
+    "reality_stone",
+    "reality_fridge"
+  ]
+}

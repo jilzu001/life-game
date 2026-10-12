@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_02",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "대기열의 대리인",
+  "description": "기다리는 줄에 당신의 자리를 대신 맡았다는 존재가 나타났다. 부탁한 기억은 없지만 순서는 이미 돌아왔다.",
+  "image": "images/events/universal_council.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "사정을 묻고 차례를 나눈다",
+      "resultText": "누가 오래 기다렸는지 이야기하며 새로운 순서를 정했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "shared_turn",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "자리를 거절하고 뒤로 간다",
+      "resultText": "찜찜함을 피하는 대신 기다릴 시간이 늘었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

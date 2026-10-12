@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_curse",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "저주가 청구서를 보냈다",
+  "description": "칼날의 균열에서 작은 회계사가 나온다. 그동안의 힘을 일시불로 정산할지, 더 큰 재앙으로 돌려막을지 묻는다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "crisis_started",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "flag",
+        "key": "cursed",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "settle",
+      "text": "힘을 줄여 저주를 끊는다",
+      "resultText": "저주는 사라졌다. 대가로 남은 금은 당신의 일부가 됐다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "cursed",
+          "value": false
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -15
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "borrow",
+      "text": "재앙을 담보로 더 빌린다",
+      "resultText": "청구서의 서명 칸이 하늘까지 길어졌다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "broker_deal",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -20
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

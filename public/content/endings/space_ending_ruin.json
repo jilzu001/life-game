@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "space_ending_ruin",
+  "worldIds": [
+    "space"
+  ],
+  "title": "돌아오지 않은 빛",
+  "description": "짧은 확장을 위해 써 버린 여유가 끝내 부족했다. 멀리 남긴 흔적만이 그 자리에 무언가 있었다고 말한다.",
+  "image": "images/endings/space_ruin.svg",
+  "priority": 100,
+  "isDefault": false,
+  "conditions": {
+    "any": [
+      {
+        "type": "stat",
+        "key": "survival",
+        "operator": "lte",
+        "value": 20
+      },
+      {
+        "all": [
+          {
+            "type": "flag",
+            "key": "space_breach",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "type": "stat",
+            "key": "chaos",
+            "operator": "gte",
+            "value": 80
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_02",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "튜토리얼 보상 미지급",
+  "description": "안내 음성이 축하를 반복하지만 보상 칸은 비어 있다. 보상 지급 조건이 안내를 끝까지 듣는 것인데 안내에는 끝이 없다.",
+  "image": "images/events/hunter_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "반복 구간을 기록해 신고한다",
+      "resultText": "첫 오류 보고서에 접수 번호가 붙었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "hunter_ticket"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "보상 없이 출구를 찾는다",
+      "resultText": "시간을 아꼈지만 돌려받을 권리는 미뤄졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

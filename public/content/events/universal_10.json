@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_10",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "지름길의 유지비",
+  "description": "한 번 편하게 쓴 길에 요금 안내가 붙었다. 그 길을 돌보던 존재들은 그동안 아무 보상도 받지 못했다고 한다.",
+  "image": "images/events/universal_council.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "돌볼 일을 나누어 맡는다",
+      "resultText": "빠른 길이 서로의 약속으로 유지되기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "shared_road",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "천천히 다른 길로 간다",
+      "resultText": "시간은 더 들었지만 하나의 길에 기대지 않게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

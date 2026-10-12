@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_13",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "행운 보관함",
+  "description": "좋은 순간을 아껴 두면 나중에 더 크게 쓸 수 있다는 보관함이 나타났다. 관리자는 사용한 적은 없다고 말한다.",
+  "image": "images/events/universal_signal.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "오늘 필요한 도움에 쓴다",
+      "resultText": "행운을 증명할 수는 없어도 누군가의 오늘이 나아졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기대만으로 큰 위험을 택한다",
+      "resultText": "좋은 징조와 충분한 준비가 같지는 않다는 걸 배웠다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -20
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

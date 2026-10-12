@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_mana_stone",
+  "worldId": "hunter",
+  "name": "마나석",
+  "description": "값비싼 연료라는 분류표에서 살아 있는 존재라는 문장을 찾아 헤매는 돌.",
+  "entityType": "object",
+  "image": "images/entities/hunter_mana_stone.svg",
+  "weight": 50,
+  "timeUnit": "충전 주기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "hunter_mana_stone_place_0",
+      "name": "붕괴한 게이트",
+      "description": "붕괴한 게이트에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "hunter_mana_stone_place_1",
+      "name": "감정소 진열장",
+      "description": "감정소 진열장에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "hunter_mana_stone_trait_0",
+      "name": "깨끗한 공명",
+      "description": "깨끗한 공명 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "hunter_mana_stone_trait_1",
+      "name": "기억 저장",
+      "description": "기억 저장 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "hunter_mana_stone_flaw_0",
+      "name": "금이 간 표면",
+      "description": "금이 간 표면 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "hunter_mana_stone_flaw_1",
+      "name": "과충전",
+      "description": "과충전 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "hunter_mana_stone_fate_0",
+      "name": "빛의 시민권",
+      "description": "빛의 시민권. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_fate_0",
+        "hunter_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "hunter_mana_stone_fate_1",
+      "name": "비상 전력",
+      "description": "비상 전력. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "hunter_mana_stone_fate_1",
+        "hunter_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 65,
+    "influence": 30,
+    "intelligence": 40,
+    "freedom": 10,
+    "chaos": 50
+  },
+  "tags": [
+    "object",
+    "mana_stone"
+  ]
+}

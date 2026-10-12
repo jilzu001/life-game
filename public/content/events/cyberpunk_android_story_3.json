@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_android_story_3",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_android"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "첫 휴가 신청",
+  "description": "휴가 양식에는 인간의 가족관계만 적을 수 있다. 함께 조립된 다른 기체를 만나러 갈 방법을 찾는다.",
+  "image": "images/entities/cyberpunk_android.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "동료를 가족란에 적는다",
+      "resultText": "서류 한 장이 관계를 부르는 단어를 늘렸다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 18
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_android_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "공식 휴가 대신 잠깐 접속한다",
+      "resultText": "멀리 가지 못해도 같은 제조일을 함께 기억했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "흠집의 보증 범위에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "cyberpunk_android_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

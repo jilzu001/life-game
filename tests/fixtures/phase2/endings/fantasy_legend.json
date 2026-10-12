@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "worldIds": [
+    "fantasy"
+  ],
+  "image": "images/worlds/fantasy.svg",
+  "id": "fantasy_legend",
+  "title": "약속으로 남은 전설",
+  "description": "사람들은 힘보다 당신이 지킨 약속을 먼저 이야기했다. 이름은 무기고와 시장을 지나 다음 세대의 노래로 옮겨 갔다.",
+  "priority": 60,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 65
+      },
+      {
+        "type": "flag",
+        "key": "oath",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

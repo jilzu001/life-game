@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_stone_story_1",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_stone"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "발끝에서 발견된 무게",
+  "description": "길 위에서 굴러다니다 열린 문을 고정하는 자리에 놓였다. 하찮던 무게가 바람을 막는 이유가 됐다.",
+  "image": "images/entities/reality_stone.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "문턱에 단단히 자리 잡는다",
+      "resultText": "드나드는 사람들이 당신을 함부로 차지 않게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_stone_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "바람을 타고 바깥으로 굴러간다",
+      "resultText": "새 길을 얻었지만 어디서 멈출지는 알 수 없었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「매끈한 표면」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "reality_stone_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_ending_reversal",
+  "worldIds": [
+    "hunter"
+  ],
+  "title": "배역을 바꾼 귀환",
+  "description": "헌터와 보스와 보상으로 나뉜 표에서 벗어났다. 정해진 역할 대신 스스로 선택한 일로 다음 문을 열었다.",
+  "image": "images/endings/hunter_reversal.svg",
+  "priority": 70,
+  "isDefault": false,
+  "conditions": {
+    "type": "flag",
+    "key": "hunter_reversal",
+    "operator": "equals",
+    "value": true
+  }
+}

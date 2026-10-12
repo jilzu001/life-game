@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_ending_upheaval",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "title": "모두가 고치는 약관",
+  "description": "도시의 이용 약관이 시민의 공동 문서가 됐다. 인간과 기계와 기억이 소유물이라는 한 단어에서 벗어나기 시작했다.",
+  "image": "images/endings/cyberpunk_upheaval.svg",
+  "priority": 80,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "cyberpunk_reform",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "stat",
+        "key": "freedom",
+        "operator": "gte",
+        "value": 60
+      },
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 45
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_03",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "길드의 첫 회식",
+  "description": "길드는 모두를 환영한다며 식사를 준비했다. 장비와 몬스터와 관리자에게도 같은 음식을 강요하는 게 문제다.",
+  "image": "images/events/hunter_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "각자 필요한 휴식을 묻는다",
+      "resultText": "같은 메뉴보다 함께 쉴 시간이 더 좋은 환영이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "형식만 맞추고 나온다",
+      "resultText": "곤란한 대화는 피했지만 자신에게 필요한 것을 말하지 못했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

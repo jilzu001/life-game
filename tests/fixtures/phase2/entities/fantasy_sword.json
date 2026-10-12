@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_sword",
+  "worldId": "fantasy",
+  "name": "살아 있는 마검",
+  "description": "누군가의 손에 들릴 운명이지만, 누구의 뜻을 따를지는 아직 정해지지 않았다.",
+  "entityType": "object",
+  "image": "images/entities/magic-sword.svg",
+  "weight": 100,
+  "timeUnit": "각성 주기",
+  "birthStory": "{world}의 {location}에서 당신은 {entity}으로 깨어났다. 타고난 특징은 {trait}. 그러나 {flaw}이라는 결함도 함께 눈을 떴다. 칼집 밖의 세계는 아직 당신의 이름을 모른다.",
+  "birthLocations": [
+    {
+      "id": "royal_armory",
+      "name": "왕실 무기고",
+      "description": "왕실 소유라는 표식이 칼자루에 새겨져 있다.",
+      "weight": 60,
+      "flags": ["royal_property"],
+      "effects": [
+        { "op": "addStat", "key": "influence", "value": 10 },
+        { "op": "addStat", "key": "freedom", "value": -5 }
+      ]
+    },
+    {
+      "id": "ancient_ruins",
+      "name": "고대 유적",
+      "description": "사라진 언어로 된 주문이 칼날을 맴돈다.",
+      "weight": 40,
+      "flags": ["ancient_origin"],
+      "effects": [
+        { "op": "addStat", "key": "intelligence", "value": 10 },
+        { "op": "addStat", "key": "chaos", "value": 5 }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "magic_absorb",
+      "name": "마력 흡수",
+      "description": "주변의 마력을 빨아들여 칼날을 유지한다. 같은 원리로 칼날에 붙은 저주도 흡수한다.",
+      "weight": 50,
+      "flags": [],
+      "effects": [
+        { "op": "addStat", "key": "intelligence", "value": 15 },
+        { "op": "addTag", "key": "magic_absorb" },
+        { "op": "addItem", "key": "mana_fragment" }
+      ]
+    },
+    {
+      "id": "talking_sword",
+      "name": "말하는 검",
+      "description": "입이 없어도 말을 한다. 칼집에 넣어도 조용해지지는 않는다.",
+      "weight": 50,
+      "flags": ["can_speak"],
+      "effects": [
+        { "op": "addStat", "key": "influence", "value": 10 },
+        { "op": "addTag", "key": "speaking" }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "owner_dependent",
+      "name": "주인 의존",
+      "description": "스스로 움직일 수 없다. 주인이 사라지면 칼집에서 나오는 일부터 위기가 된다.",
+      "weight": 50,
+      "flags": ["needs_owner"],
+      "effects": [ { "op": "addStat", "key": "freedom", "value": -20 } ]
+    },
+    {
+      "id": "cursed_blade",
+      "name": "저주받은 칼날",
+      "description": "강한 힘을 내는 대신 금이 조금씩 늘어난다.",
+      "weight": 50,
+      "conditions": { "all": [
+        { "type": "trait", "operator": "notEquals", "value": "magic_absorb" },
+        { "type": "tag", "key": "magic_absorb", "operator": "equals", "value": false }
+      ] },
+      "flags": ["cursed"],
+      "effects": [
+        { "op": "addStat", "key": "chaos", "value": 20 },
+        { "op": "addStat", "key": "survival", "value": -10 }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "crown_witness",
+      "name": "왕관의 증인",
+      "description": "다음 왕을 결정하는 순간, 칼날이 기억한 진실이 드러난다.",
+      "weight": 60,
+      "conditions": { "type": "flag", "key": "royal_property", "operator": "equals", "value": true },
+      "flags": ["fate_crown_witness"],
+      "effects": []
+    },
+    {
+      "id": "sealed_gate_key",
+      "name": "봉인된 문의 열쇠",
+      "description": "당신은 무기로 오해받고 있는 고대 문의 열쇠다.",
+      "weight": 40,
+      "conditions": { "type": "flag", "key": "ancient_origin", "operator": "equals", "value": true },
+      "flags": ["fate_sealed_gate_key"],
+      "effects": []
+    }
+  ],
+  "initialStats": { "survival": 70, "influence": 20, "intelligence": 40, "freedom": 30, "chaos": 30 },
+  "tags": ["object", "weapon", "magic"]
+}

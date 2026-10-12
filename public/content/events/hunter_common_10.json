@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_10",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "게이트 부동산 설명회",
+  "description": "도시는 안정된 게이트를 관광 시설로 팔려 한다. 안에 사는 존재들의 생활은 수익 계산에 빠져 있다.",
+  "image": "images/events/hunter_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "거주와 방문 구역을 구분한다",
+      "resultText": "공략지가 일상과 함께 존재할 수 있다는 첫 계약이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "관광 수입을 먼저 확보한다",
+      "resultText": "손님은 많아졌고 감당해야 할 위험도 함께 늘었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

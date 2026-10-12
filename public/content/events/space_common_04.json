@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "space_common_04",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "연료 대신 받은 시",
+  "description": "표류하는 중계소가 연료 대신 시를 보내 온다. 궤도와 정박 시간이 행마다 감춰져 있다는 걸 눈치챈다.",
+  "image": "images/events/space_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "시를 해독한다",
+      "resultText": "낯선 문장 끝에서 쉬어 갈 좌표를 찾았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "addItem",
+          "key": "space_poem_map"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "신호를 이웃에게 전달한다",
+      "resultText": "직접 풀지는 못했지만 해독을 마친 이웃이 답례를 보냈다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

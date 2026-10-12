@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_18",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "끝나지 않는 작별 인사",
+  "description": "떠나기 전에 건네는 인사가 길어져 아무도 움직이지 못한다. 관계를 끝내는 것과 길을 나서는 것은 다를 수 있다.",
+  "image": "images/events/universal_council.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "다시 소식을 전할 방법을 남긴다",
+      "resultText": "작별은 약속을 끊는 대신 다른 형태로 바꾸는 일이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "조용히 먼저 떠난다",
+      "resultText": "돌아볼 마음과 앞으로 갈 힘을 함께 챙겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

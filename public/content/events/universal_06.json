@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_06",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "소문보다 늦은 본인",
+  "description": "당신이 큰일을 했다는 이야기가 퍼졌는데 아직 그런 선택을 한 적이 없다. 사람들은 결과부터 축하한다.",
+  "image": "images/events/universal_council.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "기대와 사실을 구분해 알린다",
+      "resultText": "박수는 줄어도 다음 선택은 직접 할 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기대에 맞춰 무리한다",
+      "resultText": "소문과 비슷한 결과를 얻었지만 준비할 시간을 잃었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -18
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

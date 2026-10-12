@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_02",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "라디오의 신청곡",
+  "description": "오래된 라디오는 구조 요청보다 신청곡을 또렷하게 받는다. 방송자는 노래 사이에 피난 좌표를 숨겨 보내자고 한다.",
+  "image": "images/events/zombie_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "신호를 전달한다",
+      "resultText": "흥얼거리는 무리가 같은 방향을 보았다. 구조 신호가 노래처럼 퍼졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "zombie_radio_code"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "방송을 끈다",
+      "resultText": "소리를 쫓던 위험이 멀어졌다. 대신 다른 피난민의 소식도 끊겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

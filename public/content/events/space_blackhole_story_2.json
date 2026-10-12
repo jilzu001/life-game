@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "space_blackhole_story_2",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_blackhole"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "중력 관광 예약",
+  "description": "관광선들이 당신 주변에 줄을 선다. 좋은 전망을 요구하며 점점 더 가까운 궤도를 예약한다.",
+  "image": "images/entities/space_blackhole.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "접근 한계를 표시한다",
+      "resultText": "기대보다 덜 극적인 여행이지만 모두 돌아갈 수 있었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "space_blackhole_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "가장 가까운 좌석을 판다",
+      "resultText": "소문은 커졌고 경계의 작은 변화가 사고를 부르기 시작했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -18
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「끝없는 허기」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "space_blackhole_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

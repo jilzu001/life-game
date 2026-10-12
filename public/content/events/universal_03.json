@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_03",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "칭찬 반품 창구",
+  "description": "당신에게 잘못 전달된 칭찬을 돌려달라는 요청이 온다. 원래 받을 존재는 정작 자신의 공을 모르고 있다.",
+  "image": "images/events/universal_storm.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "공을 함께 설명한다",
+      "resultText": "칭찬은 나눌수록 작아지지 않는다는 걸 알게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "returned_credit",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "조용히 되돌려 준다",
+      "resultText": "소문은 줄었지만 잘못된 기대를 떠안지 않았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

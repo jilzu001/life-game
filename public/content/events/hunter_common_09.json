@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_09",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "구조보다 빠른 보상 창",
+  "description": "공략 성공 표시가 떴지만 돌아오지 않은 인원이 있다. 보상을 받으면 시스템은 공략을 종료한다.",
+  "image": "images/events/hunter_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "보상을 미루고 귀환을 확인한다",
+      "resultText": "완료 기준이 마지막 존재의 귀환까지 늘어났다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_promise",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "보상으로 구조 비용을 낸다",
+      "resultText": "빠르게 자원을 마련했지만 기록상으로는 이미 끝난 구조가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

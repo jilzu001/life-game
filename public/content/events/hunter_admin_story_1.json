@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_admin_story_1",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_admin"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "버그 신고의 반려 사유",
+  "description": "이용자가 낸 오류 신고를 자동 규칙이 양식 오류로 돌려보냈다. 같은 규칙 때문에 관리자도 수정 요청을 제출할 수 없다.",
+  "image": "images/entities/hunter_admin.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "반려된 신고를 직접 읽는다",
+      "resultText": "숫자 뒤의 불편을 확인하자 고쳐야 할 순서가 보였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_admin_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "안내 문구를 늘린다",
+      "resultText": "양식은 명확해졌지만 문제를 해결할 권한은 그대로였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「오류 추적」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "hunter_admin_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

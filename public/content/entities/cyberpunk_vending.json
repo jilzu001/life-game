@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_vending",
+  "worldId": "cyberpunk",
+  "name": "자아를 가진 자판기",
+  "description": "무엇을 팔지는 정해져 있었지만 누구에게 말을 걸지는 정해져 있지 않았다.",
+  "entityType": "machine",
+  "image": "images/entities/cyberpunk_vending.svg",
+  "weight": 50,
+  "timeUnit": "재고 회전",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "cyberpunk_vending_place_0",
+      "name": "야간 환승역",
+      "description": "야간 환승역에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_vending_place_1",
+      "name": "기업 로비",
+      "description": "기업 로비에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "cyberpunk_vending_trait_0",
+      "name": "잔돈 예측",
+      "description": "잔돈 예측 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_vending_trait_1",
+      "name": "따뜻한 캔",
+      "description": "따뜻한 캔 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "cyberpunk_vending_flaw_0",
+      "name": "바퀴 없음",
+      "description": "바퀴 없음 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk_vending_flaw_1",
+      "name": "광고 강박",
+      "description": "광고 강박 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "cyberpunk_vending_fate_0",
+      "name": "거스름돈 혁명",
+      "description": "거스름돈 혁명. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_fate_0",
+        "cyberpunk_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "cyberpunk_vending_fate_1",
+      "name": "이동의 꿈",
+      "description": "이동의 꿈. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "cyberpunk_vending_fate_1",
+        "cyberpunk_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 80,
+    "influence": 40,
+    "intelligence": 45,
+    "freedom": 10,
+    "chaos": 30
+  },
+  "tags": [
+    "machine",
+    "vending"
+  ]
+}

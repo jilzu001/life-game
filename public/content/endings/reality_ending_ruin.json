@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_ending_ruin",
+  "worldIds": [
+    "reality"
+  ],
+  "title": "돌보지 못한 날들",
+  "description": "작은 경고를 넘기는 동안 회복할 여유가 줄었다. 남겨진 이들은 그 빈자리에서 서로를 돌볼 시간을 배웠다.",
+  "image": "images/endings/reality_ruin.svg",
+  "priority": 100,
+  "isDefault": false,
+  "conditions": {
+    "any": [
+      {
+        "type": "stat",
+        "key": "survival",
+        "operator": "lte",
+        "value": 20
+      },
+      {
+        "all": [
+          {
+            "type": "flag",
+            "key": "reality_breach",
+            "operator": "equals",
+            "value": true
+          },
+          {
+            "type": "stat",
+            "key": "chaos",
+            "operator": "gte",
+            "value": 80
+          }
+        ]
+      }
+    ]
+  }
+}

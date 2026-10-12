@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_admin_story_3",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [
+    "hunter_admin"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "읽기 전용 권한의 끝",
+  "description": "수정 권한 한 번이 주어진다. 자기 권한을 늘릴지 모든 이용자에게 이의 신청 버튼을 줄지 고를 수 있다.",
+  "image": "images/entities/hunter_admin.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "모두의 이의 신청 창구를 만든다",
+      "resultText": "명령하는 관리자에서 답하는 관리자로 역할이 바뀌었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_admin_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "권한을 넓혀 오류를 직접 고친다",
+      "resultText": "수정은 빨라졌지만 다른 존재들이 당신을 기다리는 시간이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "버그 신고의 반려 사유에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "hunter_admin_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

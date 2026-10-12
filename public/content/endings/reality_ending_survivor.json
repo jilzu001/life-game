@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_ending_survivor",
+  "worldIds": [
+    "reality"
+  ],
+  "title": "같은 자리의 다음 계절",
+  "description": "크게 알려진 이름은 아니어도 당신 때문에 편해진 하루가 있었다. 평범한 삶은 그렇게 다른 삶의 일부가 됐다.",
+  "image": "images/endings/reality_survivor.svg",
+  "priority": 0,
+  "isDefault": true
+}

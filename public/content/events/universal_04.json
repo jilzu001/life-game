@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_04",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "빈 봉투의 가격",
+  "description": "내용물이 없는 봉투가 귀한 것으로 거래된다. 아무것도 담지 않을 자유를 판다는 설명에 모두 고개를 끄덕인다.",
+  "image": "images/events/universal_gate.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "빈 공간을 필요한 이에게 준다",
+      "resultText": "포장 대신 쓸 수 있는 자리가 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "가장 싼 봉투를 산다",
+      "resultText": "작은 물건을 넣자 귀한 빈 봉투는 평범하지만 쓸모 있어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "addItem",
+          "key": "empty_envelope"
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

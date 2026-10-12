@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_hacker_story_2",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_hacker"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "임대 의수의 휴무",
+  "description": "의수 제공사가 유지보수 시간을 일방적으로 정한다. 중요한 약속 시간에 손이 멈춘다는 안내가 뜬다.",
+  "image": "images/entities/cyberpunk_hacker.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "사용자들과 정비 시간을 협의한다",
+      "resultText": "고장보다 생활을 먼저 보는 정비표가 만들어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_hacker_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "정비를 건너뛴다",
+      "resultText": "약속은 지켰지만 작은 진동이 계속 손목에 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「임대 의수」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "cyberpunk_hacker_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

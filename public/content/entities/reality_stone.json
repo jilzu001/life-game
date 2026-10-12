@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_stone",
+  "worldId": "reality",
+  "name": "돌멩이",
+  "description": "대부분의 날에는 배경이지만 어느 날 누군가의 발걸음을 바꿀 수 있다.",
+  "entityType": "object",
+  "image": "images/entities/reality_stone.svg",
+  "weight": 50,
+  "timeUnit": "풍화기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "reality_stone_place_0",
+      "name": "강변 자갈밭",
+      "description": "강변 자갈밭에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "reality_stone_place_1",
+      "name": "공사장 흙더미",
+      "description": "공사장 흙더미에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "reality_stone_trait_0",
+      "name": "매끈한 표면",
+      "description": "매끈한 표면 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "reality_stone_trait_1",
+      "name": "단단한 결",
+      "description": "단단한 결 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "reality_stone_flaw_0",
+      "name": "잘 굴러감",
+      "description": "잘 굴러감 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "reality_stone_flaw_1",
+      "name": "눈에 안 띔",
+      "description": "눈에 안 띔 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "reality_stone_fate_0",
+      "name": "작은 표지석",
+      "description": "작은 표지석. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_fate_0",
+        "reality_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "reality_stone_fate_1",
+      "name": "주머니 여행",
+      "description": "주머니 여행. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "reality_stone_fate_1",
+        "reality_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 95,
+    "influence": 10,
+    "intelligence": 20,
+    "freedom": 15,
+    "chaos": 20
+  },
+  "tags": [
+    "object",
+    "stone"
+  ]
+}

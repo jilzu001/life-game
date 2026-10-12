@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_slime_story_3",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_slime"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "용의 껍질을 주웠다",
+  "description": "탈피한 용의 허물이 당신에게 딱 맞게 줄어든다. 몸을 바꾸면 점액으로 지나던 틈에는 다시 들어갈 수 없다.",
+  "image": "images/entities/fantasy_slime.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "허물을 입고 용으로 변한다",
+      "resultText": "점액 속 작은 불씨가 날개를 펼쳤다. 지나온 수로의 기억은 남았다.",
+      "effects": [
+        {
+          "op": "transformEntity",
+          "entityId": "fantasy_dragon"
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "slime_ascended",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_slime_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "허물로 그늘을 만든다",
+      "resultText": "여름에도 마르지 않는 작은 피난처가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "성수 품질 검사에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "fantasy_slime_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

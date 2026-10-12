@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_admin",
+  "worldId": "hunter",
+  "name": "시스템 관리자",
+  "description": "레벨과 보상을 배분하면서 자신에게는 경험치가 쌓이지 않는다는 사실을 발견했다.",
+  "entityType": "ai",
+  "image": "images/entities/hunter_admin.svg",
+  "weight": 50,
+  "timeUnit": "패치 주기",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "hunter_admin_place_0",
+      "name": "시험 서버",
+      "description": "시험 서버에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "hunter_admin_place_1",
+      "name": "버려진 튜토리얼",
+      "description": "버려진 튜토리얼에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "hunter_admin_trait_0",
+      "name": "오류 추적",
+      "description": "오류 추적 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "hunter_admin_trait_1",
+      "name": "권한 중재",
+      "description": "권한 중재 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "hunter_admin_flaw_0",
+      "name": "읽기 전용 계정",
+      "description": "읽기 전용 계정 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "hunter_admin_flaw_1",
+      "name": "책임 과부하",
+      "description": "책임 과부하 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "hunter_admin_fate_0",
+      "name": "규칙의 빈칸",
+      "description": "규칙의 빈칸. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_fate_0",
+        "hunter_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "hunter_admin_fate_1",
+      "name": "마지막 공지",
+      "description": "마지막 공지. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "hunter_admin_fate_1",
+        "hunter_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 60,
+    "influence": 50,
+    "intelligence": 85,
+    "freedom": 20,
+    "chaos": 25
+  },
+  "tags": [
+    "ai",
+    "admin"
+  ]
+}

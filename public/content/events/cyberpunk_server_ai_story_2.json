@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_server_ai_story_2",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_server_ai"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "바닷물 냉각료",
+  "description": "해저 센터의 냉각 계약이 바뀌어 뜨거운 바다에 더 많은 열을 버리게 된다. 비용을 줄이는 명령과 경고 그래프가 충돌한다.",
+  "image": "images/entities/cyberpunk_server_ai.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "덜 급한 계산을 미룬다",
+      "resultText": "처리 속도를 양보한 만큼 주변 수온이 안정됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -5
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_server_ai_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "계약 목표량을 끝까지 채운다",
+      "resultText": "성능 보고서는 완벽했고 냉각 경고는 더 잦아졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -20
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「냉각 부족」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "cyberpunk_server_ai_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

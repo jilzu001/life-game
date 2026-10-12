@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_common_04",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "엘리베이터의 신분 심사",
+  "description": "도시 수직 교통망이 유료 주민만 위층으로 보낸다. 아래층에는 햇빛을 기다리는 존재들이 모인다.",
+  "image": "images/events/cyberpunk_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "공동 운행 시간을 협상한다",
+      "resultText": "소유권을 사지 않아도 함께 이동할 시간이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "정비 통로를 택한다",
+      "resultText": "높은 곳에 도착했지만 다음 사람에게 안내할 안전한 길은 아니었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -10
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

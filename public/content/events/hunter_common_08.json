@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_08",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "규칙 수정 회의",
+  "description": "공략 규칙을 고치는 자리에 헌터만 초대됐다. 매번 쓰러져야 하는 존재와 보상으로 팔리는 존재는 방 밖에서 기다린다.",
+  "image": "images/events/hunter_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "영향받는 존재 모두를 부른다",
+      "resultText": "회의는 길어졌지만 규칙을 따를 이유가 늘었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기존 규칙을 전부 무시한다",
+      "resultText": "막힌 길과 안전 장치가 함께 사라졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 25
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_breach",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "fate",
+      "text": "부여받은 배역의 수정권을 요구한다",
+      "resultText": "임무의 결말보다 그 결말을 고를 권리가 먼저 기록됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "hunter_fate_1",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_fate_accepted",
+          "value": true
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "revealsFate": true
+}

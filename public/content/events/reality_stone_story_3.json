@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_stone_story_3",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_stone"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "돌에 새긴 짧은 화살표",
+  "description": "갈림길에서 작은 표식이 필요해졌다. 큰 안내판은 없지만 당신 위에는 화살표 하나를 남길 자리가 있다.",
+  "image": "images/entities/reality_stone.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "표지석으로 자리를 잡는다",
+      "resultText": "움직이지 않아도 많은 발걸음의 방향을 바꾸게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reversal",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_stone_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "기념품으로 다른 집에 간다",
+      "resultText": "먼 풍경을 떠올리게 하는 작은 무게가 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "발끝에서 발견된 무게에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "reality_stone_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

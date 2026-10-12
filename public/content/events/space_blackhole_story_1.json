@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "space_blackhole_story_1",
+  "worldIds": [
+    "space"
+  ],
+  "entityIds": [
+    "space_blackhole"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "삼키지 않은 편지",
+  "description": "경계 가까이 온 탐사기가 마지막 편지를 전송한다. 당신은 조금만 힘을 바꾸면 신호를 바깥으로 돌려보낼 수 있다.",
+  "image": "images/entities/space_blackhole.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "신호를 되돌려 보낸다",
+      "resultText": "받을 수 없는 답장 대신 누군가에게 닿을 빛을 남겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "space_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "space_blackhole_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "경계를 그대로 유지한다",
+      "resultText": "안정된 몸을 지켰지만 작은 빛이 영영 보이지 않게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 12
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「섬세한 중력」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "space_blackhole_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

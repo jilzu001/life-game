@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_fridge_story_1",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_fridge"
+  ],
+  "entityTags": [],
+  "stage": "growth",
+  "title": "유통 기한보다 먼저",
+  "description": "문 안쪽 메모에는 함께 먹기로 한 날짜가 적혀 있다. 식재료보다 약속이 먼저 기한을 넘겼다.",
+  "image": "images/entities/reality_fridge.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "남은 재료로 함께 만들 메뉴를 알린다",
+      "resultText": "먹거리를 버리기 전에 식탁에 모일 이유가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_promise",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_fridge_memory_0",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "보관 온도를 더 낮춘다",
+      "resultText": "재료를 조금 더 지켰지만 식탁의 빈자리는 그대로였다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "talent",
+      "text": "타고난 특징 「재고 기억」을 활용한다",
+      "resultText": "익숙한 재능으로 상황의 다른 면을 발견했다. 무리한 행동을 줄이고 작은 해결책을 남겼다.",
+      "conditions": {
+        "type": "trait",
+        "operator": "equals",
+        "value": "reality_fridge_trait_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

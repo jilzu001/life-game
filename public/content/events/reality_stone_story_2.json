@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_stone_story_2",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [
+    "reality_stone"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "수제비뜨기의 마지막 차례",
+  "description": "강가의 아이가 당신의 평평한 면을 들여다본다. 멀리 날아갈 수도, 손안에 남을 수도 있는 순간이다.",
+  "image": "images/entities/reality_stone.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "매끈한 면으로 물 위를 건넌다",
+      "resultText": "몇 번의 작은 도약이 누군가의 오래된 기억이 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -8
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_stone_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "거친 면으로 손안에 남는다",
+      "resultText": "주머니 속에서 다른 장소로 갈 기회를 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addItem",
+          "key": "reality_pocket"
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「잘 굴러감」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "reality_stone_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_adventurer_story_3",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [
+    "fantasy_adventurer"
+  ],
+  "entityTags": [],
+  "stage": "transition",
+  "title": "용사 대역 면접",
+  "description": "왕실은 예언 속 용사와 닮았다는 이유로 당신에게 대역을 제안한다. 실제 위험은 맡고 사진에는 원래 용사가 나온다.",
+  "image": "images/entities/adventurer.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "대역 이름도 기록하라고 요구한다",
+      "resultText": "계약서에 처음으로 대역의 이름이 남았다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "fantasy_adventurer_memory_2",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "조건을 숨기고 명성을 얻는다",
+      "resultText": "박수는 컸지만 들킬 때마다 새로운 거짓말이 필요했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 18
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "remember",
+      "text": "앞서 남긴 선택을 근거로 도움을 요청한다",
+      "resultText": "지도에 없는 고향에서 남긴 인연이 답했다. 이번에는 혼자 결정하지 않아도 됐다.",
+      "conditions": {
+        "type": "flag",
+        "key": "fantasy_adventurer_memory_0",
+        "operator": "equals",
+        "value": true
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 8
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk",
+  "name": "사이버펑크",
+  "description": "기억과 신체를 빌리는 네온 도시에서 소유권과 자아의 경계가 흔들린다.",
+  "image": "images/worlds/cyberpunk.svg",
+  "weight": 100,
+  "entityIds": [
+    "cyberpunk_hacker",
+    "cyberpunk_android",
+    "cyberpunk_vending",
+    "cyberpunk_server_ai",
+    "cyberpunk_memory_chip"
+  ]
+}

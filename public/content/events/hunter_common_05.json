@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "hunter_common_05",
+  "worldIds": [
+    "hunter"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "출구 점검 시간",
+  "description": "게이트 출구가 정기 점검에 들어간다. 안쪽의 존재들은 점검 공지를 볼 수 없었다.",
+  "image": "images/events/hunter_storm.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "양쪽에 도착 신호를 보낸다",
+      "resultText": "누가 아직 안에 있는지 확인하고 문을 닫을 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "hunter_network",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "좁은 틈으로 먼저 통과한다",
+      "resultText": "먼저 나왔지만 남은 존재들의 상태는 알 수 없었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 15
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

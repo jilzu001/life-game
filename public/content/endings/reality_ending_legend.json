@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_ending_legend",
+  "worldIds": [
+    "reality"
+  ],
+  "title": "동네가 기억하는 이름",
+  "description": "도움을 주겠다는 약속이 쌓여 동네의 습관이 됐다. 이야기는 거창한 기념비보다 매일 건네는 인사 속에 남았다.",
+  "image": "images/endings/reality_legend.svg",
+  "priority": 60,
+  "isDefault": false,
+  "conditions": {
+    "all": [
+      {
+        "type": "flag",
+        "key": "reality_promise",
+        "operator": "equals",
+        "value": true
+      },
+      {
+        "type": "stat",
+        "key": "influence",
+        "operator": "gte",
+        "value": 65
+      }
+    ]
+  }
+}

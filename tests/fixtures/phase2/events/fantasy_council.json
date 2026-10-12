@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "id": "fantasy_council",
+  "worldIds": [
+    "fantasy"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "탁자 아래의 의회",
+  "description": "왕실 의회가 회의장 크기를 줄이다가 탁자 아래에서 회의를 열게 됐다. 덕분에 키와 신분보다 목소리의 내용이 잘 들린다.",
+  "image": "images/worlds/fantasy.svg",
+  "weight": 10,
+  "conditions": {
+    "type": "flag",
+    "key": "life_started",
+    "operator": "equals",
+    "value": true
+  },
+  "choices": [
+    {
+      "id": "testify",
+      "text": "그동안 본 것을 증언한다",
+      "resultText": "남긴 기록과 지켜 온 약속이 당신의 말을 뒷받침했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "break",
+      "text": "소유권 제도를 폐지하자고 한다",
+      "resultText": "누가 누구를 소유하는지 적힌 장부가 한꺼번에 불탔다.",
+      "effects": [
+        {
+          "op": "setFlag",
+          "key": "break_system",
+          "value": true
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": 20
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "seal",
+      "text": "왕실 인장을 증거로 내놓는다",
+      "resultText": "동행 계약의 인장이 의회까지 이어졌다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 25
+        },
+        {
+          "op": "removeItem",
+          "key": "royal_seal"
+        }
+      ],
+      "branches": [],
+      "conditions": {
+        "type": "item",
+        "key": "royal_seal",
+        "operator": "equals",
+        "value": true
+      }
+    }
+  ],
+  "branches": []
+}

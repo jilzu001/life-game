@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "space_ship",
+  "worldId": "space",
+  "name": "탐사 우주선",
+  "description": "목적지 목록 끝에 자기 고향도 포함되어 있는지 궁금해진 탐사선.",
+  "entityType": "machine",
+  "image": "images/entities/space_ship.svg",
+  "weight": 50,
+  "timeUnit": "항해 구간",
+  "birthStory": "{location}에서 첫 기억이 시작됐다. 당신의 모습은 {entity}. {trait} 덕분에 가능한 일이 있고, {flaw} 때문에 조심해야 할 일도 있다. 이제 {world}에 당신의 이야기가 더해진다.",
+  "birthLocations": [
+    {
+      "id": "space_ship_place_0",
+      "name": "궤도 조선소",
+      "description": "궤도 조선소에서 시작한 삶. 주변의 연결을 얻지만 정해진 역할을 기대받는다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_place_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "id": "space_ship_place_1",
+      "name": "유실 함대",
+      "description": "유실 함대에서 시작한 삶. 스스로 길을 찾는 대신 출발 자원이 적다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_place_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "id": "space_ship_trait_0",
+      "name": "별자리 기억",
+      "description": "별자리 기억 덕분에 변화를 빨리 알아채고 해결책을 찾아낸다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_trait_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "id": "space_ship_trait_1",
+      "name": "자가 수선",
+      "description": "자가 수선 덕분에 주변의 신뢰를 얻고 협상할 여지가 생긴다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_trait_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "flaws": [
+    {
+      "id": "space_ship_flaw_0",
+      "name": "연료 누출",
+      "description": "연료 누출 때문에 위기를 오래 견디기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_flaw_0"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "id": "space_ship_flaw_1",
+      "name": "귀환 명령",
+      "description": "귀환 명령 때문에 원하는 때에 자유롭게 움직이기 어렵다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_flaw_1"
+      ],
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": -15
+        }
+      ]
+    }
+  ],
+  "hiddenFates": [
+    {
+      "id": "space_ship_fate_0",
+      "name": "승객 없는 구조",
+      "description": "승객 없는 구조. 누군가와의 약속이 삶의 방향을 정하게 된다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_fate_0",
+        "space_fate_0"
+      ],
+      "effects": []
+    },
+    {
+      "id": "space_ship_fate_1",
+      "name": "지도 밖의 항로",
+      "description": "지도 밖의 항로. 기존 질서에 다른 선택지를 남길 기회가 온다.",
+      "weight": 50,
+      "flags": [
+        "space_ship_fate_1",
+        "space_fate_1"
+      ],
+      "effects": []
+    }
+  ],
+  "initialStats": {
+    "survival": 80,
+    "influence": 35,
+    "intelligence": 70,
+    "freedom": 40,
+    "chaos": 20
+  },
+  "tags": [
+    "machine",
+    "ship"
+  ]
+}

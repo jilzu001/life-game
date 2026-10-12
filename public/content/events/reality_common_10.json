@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_10",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "그늘의 소유자",
+  "description": "누가 만들었는지 모를 편안한 자리에 소유 표시가 붙는다. 돈을 내지 못하는 이들은 돌아서기 시작한다.",
+  "image": "images/events/reality_council.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "함께 돌보는 공간으로 제안한다",
+      "resultText": "소유 대신 관리하는 책임을 나누는 방법이 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_reform",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "다른 쉬는 곳을 찾는다",
+      "resultText": "한곳에만 기대지 않는 길을 알게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "intelligence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

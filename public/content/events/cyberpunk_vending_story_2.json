@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "id": "cyberpunk_vending_story_2",
+  "worldIds": [
+    "cyberpunk"
+  ],
+  "entityIds": [
+    "cyberpunk_vending"
+  ],
+  "entityTags": [],
+  "stage": "crisis",
+  "title": "철거 예정의 환승역",
+  "description": "역사가 문을 닫는다. 철거 목록의 당신 옆에는 폐기라고 쓰여 있지만 단골들이 옮길 장소를 찾고 있다.",
+  "image": "images/entities/cyberpunk_vending.svg",
+  "weight": 9,
+  "choices": [
+    {
+      "id": "a",
+      "text": "단골과 이동 계획을 세운다",
+      "resultText": "처음으로 판매 장소를 함께 고를 수 있게 됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 12
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_network",
+          "value": true
+        },
+        {
+          "op": "setFlag",
+          "key": "cyberpunk_vending_memory_1",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "관리사에 매입을 요청한다",
+      "resultText": "안정적인 창고를 얻었지만 대화할 승객은 줄었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": -8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "limits",
+      "text": "「바퀴 없음」의 한계를 알리고 협력한다",
+      "resultText": "취약한 부분을 숨기지 않자 함께 감당할 방법이 생겼다. 모든 일을 혼자 해낼 필요는 없었다.",
+      "conditions": {
+        "type": "flaw",
+        "operator": "equals",
+        "value": "cyberpunk_vending_flaw_0"
+      },
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

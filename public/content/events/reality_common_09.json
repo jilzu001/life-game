@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "reality_common_09",
+  "worldIds": [
+    "reality"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "climax",
+  "title": "축제 뒤의 빈 거리",
+  "description": "사람들이 떠난 뒤 남은 것을 돌볼 존재가 없다. 반짝이던 하루의 비용이 다음 날의 골목에 쌓여 있다.",
+  "image": "images/events/reality_gate.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "다음 행사를 위한 정리 약속을 남긴다",
+      "resultText": "즐거움에 뒤처리도 포함된다는 습관이 시작됐다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "setFlag",
+          "key": "reality_promise",
+          "value": true
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "조용히 원래 자리로 돌아간다",
+      "resultText": "오늘의 소란을 넘기고 회복할 시간을 얻었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": 12
+        },
+        {
+          "op": "addStat",
+          "key": "chaos",
+          "value": -8
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}

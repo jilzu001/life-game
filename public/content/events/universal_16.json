@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "universal_16",
+  "worldIds": [],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "any",
+  "title": "작은 약속의 보증인",
+  "description": "누군가 당신을 자신이 한 약속의 보증인으로 적었다. 약속을 대신 지킬 수는 없지만 사실을 확인할 수는 있다.",
+  "image": "images/events/universal_gate.svg",
+  "weight": 2,
+  "choices": [
+    {
+      "id": "a",
+      "text": "할 수 있는 책임의 범위를 정한다",
+      "resultText": "돕는 일과 대신 사는 일이 다르다는 합의가 생겼다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 8
+        }
+      ],
+      "branches": []
+    },
+    {
+      "id": "b",
+      "text": "모든 책임을 떠안는다",
+      "resultText": "당장은 문제가 덮였지만 감당할 일이 크게 늘었다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 15
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -20
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": [],
+  "chaosWeight": 2,
+  "conditions": {
+    "any": [
+      {
+        "type": "world",
+        "operator": "notEquals",
+        "value": "fantasy"
+      },
+      {
+        "type": "flag",
+        "key": "life_started",
+        "operator": "equals",
+        "value": true
+      }
+    ]
+  }
+}

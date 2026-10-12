@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "space_ending_survivor",
+  "worldIds": [
+    "space"
+  ],
+  "title": "계속되는 공전",
+  "description": "거대한 발견 대신 오래 이어질 궤도를 얻었다. 어딘가에서 당신이 보낸 작은 신호를 기다리고 있다.",
+  "image": "images/endings/space_survivor.svg",
+  "priority": 0,
+  "isDefault": true
+}

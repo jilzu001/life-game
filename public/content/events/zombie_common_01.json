@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "zombie_common_01",
+  "worldIds": [
+    "zombie"
+  ],
+  "entityIds": [],
+  "entityTags": [],
+  "stage": "awakening",
+  "title": "배급표의 빈 항목",
+  "description": "대피소 접수표에는 인간의 이름만 쓸 수 있다. 당신을 들이거나 옮기거나 연결하려는 사람들이 줄 끝에서 다툰다.",
+  "image": "images/events/zombie_signal.svg",
+  "weight": 10,
+  "choices": [
+    {
+      "id": "a",
+      "text": "기여할 일을 적는다",
+      "resultText": "이름 대신 맡을 역할이 적혔다. 경비원이 다음 창구를 안내했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "influence",
+          "value": 8
+        },
+        {
+          "op": "setFlag",
+          "key": "zombie_promise",
+          "value": true
+        }
+      ],
+      "branches": [],
+      "nextEventId": "zombie_common_02"
+    },
+    {
+      "id": "b",
+      "text": "검문이 끝날 때까지 숨는다",
+      "resultText": "시끄러운 약속을 피했지만 혼자 쓸 물자를 찾아야 했다.",
+      "effects": [
+        {
+          "op": "addStat",
+          "key": "freedom",
+          "value": 10
+        },
+        {
+          "op": "addStat",
+          "key": "survival",
+          "value": -5
+        }
+      ],
+      "branches": []
+    }
+  ],
+  "branches": []
+}
