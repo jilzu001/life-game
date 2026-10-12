@@ -7,7 +7,7 @@
 - 진단 화면: https://jilzu001.github.io/life-game/diagnostics.html
 - iframe 예제: https://jilzu001.github.io/life-game/embed-example.html
 
-저장소 루트는 이 프로젝트 `life-game/`의 내용이다. 상위 작업 공간이나 다른 게임을 포함하지 않는다. 사용자의 Phase 5 범위 조정에 따라 티스토리 게시·실제 글 삽입 검증은 제외했다.
+저장소 루트는 이 프로젝트 `life-game/`의 내용이다. 상위 작업 공간이나 다른 게임을 포함하지 않는다. GitHub 게시 후 후속 요청으로 `public/blog.html`에 티스토리 복붙용 본문을 추가했다. 실제 티스토리 게시·글 삽입 검증은 하지 않았다. `docs/TISTORY.md`를 참고한다.
 
 ## 자동 배포
 

@@ -4,6 +4,8 @@
 
 [게임 실행](https://jilzu001.github.io/life-game/) · [GitHub 저장소](https://github.com/jilzu001/life-game)
 
+티스토리 소개·사용법·게임 복붙 코드는 `public/blog.html`, 사용 방법은 `docs/TISTORY.md`에 있다.
+
 배포 절차는 `docs/DEPLOYMENT.md`, 실제 검증 결과와 남은 항목은 `docs/PROJECT_STATE.md`에 기록한다.
 
 ## 실행

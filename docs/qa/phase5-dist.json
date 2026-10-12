@@ -1,7 +1,7 @@
 {
   "contentVersion": "0.4.0-mvp",
-  "files": 360,
-  "bytes": 696254,
+  "files": 361,
+  "bytes": 701594,
   "images": 91,
   "htmlReferences": 7,
   "sha256": {
@@ -10,6 +10,7 @@
     "assets/game-CGc5H-5o.css": "6094c442d57681a288d6a7d909fa36cb8f9b3a5d83d36f3aa46a4f0bf8920139",
     "assets/game-DX93LjXi.js": "ed94a9d010eed69301e144acaa7b1acf6d2fdf6be357edaf1b855734c4ccf628",
     "assets/session-D4ktB4UY.js": "e3bd51d409dc2a10bbe52600ac20b04fdc49b984ee1113cd3c782344bdb25571",
+    "blog.html": "c4104d8621d22ee3eaa8210f2e7bc7b4c454c2332f6d4039c92a67a0b031c8ea",
     "content/endings/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "content/endings/cyberpunk_ending_legend.json": "50ec52ec7df02521d1ce5a7fd23a56e11f97cd504c50c9bbe53f160827fde5ca",
     "content/endings/cyberpunk_ending_reversal.json": "790fcb2a41221daedeef97f2e59a4772d90142a9ec2c231b73c16215b16bb1d1",

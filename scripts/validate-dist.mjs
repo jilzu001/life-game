@@ -1,4 +1,4 @@
-import { readdir, readFile } from 'node:fs/promises';
+import { lstat, readdir, readFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -8,9 +8,12 @@ async function inventory(root, prefix = '') {
   const result = new Map();
   for (const entry of await readdir(join(root, prefix), { withFileTypes: true })) {
     const path = prefix + entry.name;
-    if (entry.isDirectory()) {
+    // OneDrive 동기화 중 디렉터리 항목의 파일 종류가 일시적으로 unknown일 수 있다.
+    // lstat으로 재확인하되 실제 심볼릭 링크는 따라가지 않는다.
+    const kind = entry.isFile() || entry.isDirectory() ? entry : await lstat(join(root, path));
+    if (kind.isDirectory()) {
       for (const pair of await inventory(root, path + '/')) result.set(...pair);
-    } else if (entry.isFile()) result.set(path, await readFile(join(root, path)));
+    } else if (kind.isFile()) result.set(path, await readFile(join(root, path)));
     else throw new Error(`${path}: 배포 폴더에 링크 등 지원하지 않는 항목이 있습니다.`);
   }
   return result;
