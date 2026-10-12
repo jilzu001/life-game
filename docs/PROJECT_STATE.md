@@ -41,8 +41,8 @@
 - Pages: https://jilzu001.github.io/life-game/
 - 공개 저장소 생성 및 Pages의 GitHub Actions 모드 설정 완료.
 - 로또 대화에서 확인한 기존 Windows Git Credential Manager 인증을 사용했다. 인증값을 파일·명령 인수·출력에 저장하지 않는다.
-- 최초 배포 커밋 `9e8fd6d`, [Actions 실행 38319530111](https://github.com/jilzu001/life-game/actions/runs/38319530111)의 build·deploy 모두 성공.
-- 공개 파일 358개가 HTTP 200 및 로컬 SHA-256과 모두 일치했다. 빈 폴더 유지용 숨김 파일 `.gitkeep` 2개는 Pages artifact에서 제외된다. 증거는 `qa/phase5-live.json`.
+- 게임과 티스토리 소개 본문 배포 커밋 `d403839`, [Actions 실행 38320254280](https://github.com/jilzu001/life-game/actions/runs/38320254280)의 build·deploy 모두 성공.
+- 공개 파일 359개가 HTTP 200 및 로컬 SHA-256과 모두 일치했다. 빈 폴더 유지용 숨김 파일 `.gitkeep` 2개는 Pages artifact에서 제외된다. 증거는 `qa/phase5-live.json`.
 - 티스토리 본문은 `public/blog.html`, 붙여 넣기 방법은 `docs/TISTORY.md`에 추가했다. 소개·사용법·세계관·게임 iframe·새 창 링크·최근 한 생 저장 안내를 포함한다.
 
 ## 화면 검증과 남은 환경
@@ -51,4 +51,5 @@
 - 공개 GitHub Pages에서 실제 브라우저 검증 완료: 390×844에서 운명 생성·다시 뽑기·출생 확정, 사이버펑크 인간 해커 12개 선택 완주, 3개 선택 후 새로고침·이어하기와 같은 사건 복원, 엔딩 후 새로고침·지난 생 복원 확인. 엔딩은 “모두가 고치는 약관”.
 - 320×568 엔딩 화면 및 390×844 진행 화면에서 가로 넘침·깨진 이미지 없음. 1440×900에서 엔딩 시각 확인. 콘솔 경고·오류 없음. `qa/phase5-mobile.png`, `qa/phase5-ending-desktop.png`에 증거를 저장했다.
 - localhost 차단 경로를 재시도하지 않고, 이번 요청으로 새로 게시한 공개 사이트 자체를 검증했다.
-- 물리 휴대전화·다른 브라우저와 티스토리 교차 origin 환경은 미검증이다.
+- 공개 `blog.html`의 소개·사용법·게임 iframe을 확인했다. 390px 부모 폭에서 부모와 iframe 모두 가로 넘침 없음. iframe 안에서 지난 생 엔딩 복원, 새 인생 시작(현대 헌터물 시스템 관리자), 첫 선택 후 다음 사건 진행 확인. 깨진 이미지·콘솔 경고·오류 없음. `qa/phase5-blog-mobile.png`, `qa/phase5-blog-desktop.png`에 증거를 저장했다.
+- 물리 휴대전화·다른 브라우저와 실제 티스토리 스킨 및 교차 origin 저장 환경은 미검증이다. 이번 iframe 검증은 GitHub의 같은 origin 소개 페이지에서 수행했다.

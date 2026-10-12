@@ -1,10 +1,10 @@
 {
-  "verifiedAt": "2026-10-12T22:58:40.093929+00:00",
+  "verifiedAt": "2026-10-12T23:08:19.629055+00:00",
   "baseUrl": "https://jilzu001.github.io/life-game/",
-  "commit": "9e8fd6d479709ce97d0004961f837eed55d30d9d",
-  "actionRun": "https://github.com/jilzu001/life-game/actions/runs/38319530111",
-  "filesChecked": 358,
-  "matched": 358,
+  "commit": "d403839cce32ea2ff14f10db3b0b5069e2b9b399",
+  "actionRun": "https://github.com/jilzu001/life-game/actions/runs/38320254280",
+  "filesChecked": 359,
+  "matched": 359,
   "excluded": [
     "content/endings/.gitkeep",
     "content/events/.gitkeep"
@@ -39,6 +39,12 @@
       "path": "assets/session-D4ktB4UY.js",
       "status": 200,
       "sha256": "e3bd51d409dc2a10bbe52600ac20b04fdc49b984ee1113cd3c782344bdb25571",
+      "matches": true
+    },
+    {
+      "path": "blog.html",
+      "status": 200,
+      "sha256": "c4104d8621d22ee3eaa8210f2e7bc7b4c454c2332f6d4039c92a67a0b031c8ea",
       "matches": true
     },
     {

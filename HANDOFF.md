@@ -2,7 +2,7 @@
 
 ## 범위
 
-2026-10-13에 사용자가 Phase 5 검증·배포를 요청했고 티스토리를 제외한 GitHub 배포만 진행하도록 범위를 정했다. `docs/PROJECT_STATE.md`, `docs/DEPLOYMENT.md`를 먼저 읽는다. 이후 소개·사용법을 포함한 티스토리 복붙용 코드도 요청받아 `public/blog.html`과 `docs/TISTORY.md`를 추가했다. 실제 블로그에 게시하지는 않았다. 게임 엔진과 콘텐츠는 Phase 4를 유지한다.
+2026-10-13에 사용자가 Phase 5 검증·배포를 요청했고 티스토리를 제외한 GitHub 배포만 진행하도록 범위를 정했다. `docs/PROJECT_STATE.md`, `docs/DEPLOYMENT.md`를 먼저 읽는다. 이후 소개·사용법을 포함한 티스토리 복붙용 코드도 요청받아 `public/blog.html`과 `docs/TISTORY.md`를 추가했다. 공개 소개 페이지의 모바일 iframe에서 새 인생 시작·선택과 엔딩 복원을 검증했다. 실제 티스토리 블로그에 게시하지는 않았다. 게임 엔진과 콘텐츠는 Phase 4를 유지한다.
 
 ## Phase 5 기록
 
